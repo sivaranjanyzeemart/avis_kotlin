@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:layout_marginBottom="4dp"
+    android:background="@color/white"
+    tools:context="zeemart.asia.buyers.activities.BaseNavigationActivity">
+
+    <TextView
+        android:id="@+id/upload_failed_indicator"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@color/pinky_red"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/upload_tab_invoice_image"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/placeholder_all"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/checkBox_select_uploaded_invoice"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="13sp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/upload_tab_invoice_image"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_image_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="6 files" />
+
+        <TextView
+            android:id="@+id/txt_invoice_merged_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/txt_image_name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:text="(merged on 13 Nov 15:54)" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_image_name"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:id="@+id/img_delivery_date"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/truck"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_delivery_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/dashboard_txt_supplier_name"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name"
+                tools:text="20th Nov" />
+
+            <TextView
+                android:id="@+id/txt_time_uploaded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="@color/pinky_red"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/dashboard_txt_supplier_name"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name"
+                tools:text="Cafe Blue" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_invoice_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_image_name"
+            android:layout_marginTop="3dp"
+            android:layout_toStartOf="@+id/img_swipe_indicator"
+            android:textColor="@color/green"
+            android:textSize="12sp"
+            tools:text="In queue for processing" />
+
+        <ImageView
+            android:id="@+id/img_swipe_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/three_dots" />
+
+    </RelativeLayout>
+
+
+    <!-- <TextView
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/faintgrey"
+        app:layout_constraintBottom_toBottomOf="parent" />-->
+
+    <CheckBox
+        android:id="@+id/checkBox_select_uploaded_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

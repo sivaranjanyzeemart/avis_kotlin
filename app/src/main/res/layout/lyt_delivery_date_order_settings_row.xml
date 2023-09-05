@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_row"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:id="@+id/lyt_selected_date_blue_box"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/grey_rounded_corner"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/txt_day_delivery_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLength="3"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            tools:text="Wed" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_tick"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/lyt_selected_date_blue_box"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/icon_green_tick" />
+
+    <TextView
+        android:id="@+id/txt_deliveryDate_cut_off_time"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_tick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/grey_medium"
+        android:textSize="12sp"
+        tools:text="Until 26th Nov, 5.00 PM" />
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_deliveryDate_cut_off_time"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="@color/grey_medium"
+        android:textSize="12sp"
+        tools:text="Until 26th Nov, 5.00 PM" />
+</RelativeLayout>

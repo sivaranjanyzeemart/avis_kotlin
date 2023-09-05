@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_card_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_card"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/grey_rounded_corner_border_square"
+        android:padding="10dp"
+        android:src="@drawable/amex" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        android:layout_toRightOf="@+id/img_card"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_card_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="VISA" />
+
+        <TextView
+            android:id="@+id/txt_card_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text=".......2207" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_tick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="15dp"
+        android:src="@drawable/bluetick" />
+
+    <TextView
+        android:id="@+id/txt_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/img_card"
+        android:layout_marginTop="30dp"
+        android:background="@color/faint_grey" />
+</RelativeLayout>

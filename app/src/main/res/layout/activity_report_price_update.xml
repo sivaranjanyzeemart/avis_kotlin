@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zeemart.asia.buyers.reports.ReportPriceUpdateActivity">
+
+    <include layout="@layout/content_report_price_update" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

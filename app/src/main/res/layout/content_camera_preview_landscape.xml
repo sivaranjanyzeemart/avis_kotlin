@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_camera_preview_landscape">
+
+    <!-- Camera Preview -->
+    <FrameLayout
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--  <zeemart.asia.buyers.helper.customviews.RectangularBoundView
+          android:id="@+id/bounded_rect"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_alignParentStart="true"
+          android:layout_alignParentTop="true"
+          android:background="@color/transparent" />-->
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/camera_options"
+        android:layout_toRightOf="@+id/lyt_header_menu">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/frame_top_left" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="26dp"
+            android:layout_marginRight="22dp"
+            android:background="@drawable/frame_top_right" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="22dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/frame_bottom_left" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/frame_bottom_right" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@+id/camera_options"
+        android:layout_toEndOf="@+id/lyt_header_menu"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/txt_hold_still"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rect_rounded_corners_black"
+            android:paddingStart="21dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="21dp"
+            android:paddingBottom="4dp"
+            android:text="@string/txt_hold_still"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="23dp"
+        android:layout_toStartOf="@+id/camera_options"
+        android:layout_toEndOf="@+id/lyt_header_menu"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_invoice_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_toStartOf="@+id/camera_options"
+            android:background="@drawable/rect_rounded_corners_black"
+            android:paddingStart="15dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="4dp"
+            android:text="@string/txt_invoice_frame"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/displayCroppedImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/lyt_header_menu"
+        android:layout_width="?android:actionBarSize"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@color/black"
+        android:gravity="start">
+
+        <!--   <zeemart.asia.buyers.helper.customviews.VerticalTextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignLeft="@+id/switch_auto_crop"
+               android:layout_alignParentTop="true"
+               android:layout_marginLeft="9dp"
+               android:layout_marginTop="150dp"
+               android:gravity="bottom|right"
+               android:text="@string/txt_auto_crop"
+               android:textColor="@color/white" />
+
+           <Switch
+               android:id="@+id/switch_auto_crop"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentTop="true"
+               android:layout_centerHorizontal="true"
+               android:layout_marginTop="105dp"
+               android:gravity="center"
+               android:rotation="-90"
+               android:textColor="@color/white" />-->
+
+        <TextView
+            android:id="@+id/txt_invoice_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/txt_scan_invoice"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/white_cross" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/camera_options"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="4dp"
+        android:rotation="-180">
+
+        <ImageButton
+            android:id="@+id/btn_select_from_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:background="@color/transparent"
+            android:paddingTop="35dp"
+            android:paddingBottom="35dp"
+            android:rotation="-180"
+            android:src="@drawable/gallery" />
+
+
+        <ImageButton
+            android:id="@+id/btn_enable_disable_flash"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:background="@color/transparent"
+            android:paddingBottom="35dp"
+            android:rotation="-180"
+            android:src="@drawable/flash_active" />
+
+        <ImageButton
+            android:id="@+id/btn_capture_invoice"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.7"
+            android:background="@color/transparent"
+            android:paddingBottom="44dp"
+            android:rotation="-180"
+            android:src="@drawable/take_pic" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="0.1"
+            android:background="@color/transparent"
+            android:rotation="-180"
+            android:src="@drawable/invoicestab"
+            android:visibility="invisible" />
+
+
+        <FrameLayout
+            android:id="@+id/lyt_upload_invoices"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0.4"
+            android:rotation="-180">
+
+            <TextView
+                android:id="@+id/txt_review_Images"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/circular_text_view_blue"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:text="@string/txt_upload"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/txt_no_of_image_upload"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/circular_text_view"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:visibility="invisible"
+                tools:text="2" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

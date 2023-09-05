@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_linked_invoice"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="3dp">
+
+    <TextView
+        android:id="@+id/txt_linked_invoice_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/color_azul_two"
+        android:textSize="16sp"
+        tools:text="Invoice #INV-20171127001" />
+</androidx.constraintlayout.widget.ConstraintLayout>

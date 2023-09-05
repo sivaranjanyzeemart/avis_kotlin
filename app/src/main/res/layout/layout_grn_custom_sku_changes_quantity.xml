@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/dismiss_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nested_scroll_view_card_payment" />
+
+    <LinearLayout
+        android:id="@+id/nested_scroll_view_card_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/white_rounded_corner"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txt_sku_name_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_add_custom_line_item"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/txt_remove_credit"
+                android:textColor="@color/pinky_red"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txt_sku_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_sku_name"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_characters_remaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edt_sku_name"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@color/faint_grey"
+            android:ems="10"
+            android:maxLength="100"
+            android:paddingStart="3dp"
+            android:singleLine="false"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txt_quanity_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/txt_quantity"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lyt_decrease_quantity"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@color/faint_grey"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_dec_quant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/icon_grn_minus" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3">
+
+                <EditText
+                    android:id="@+id/edtChangeQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="58dp"
+                    android:background="@color/faint_grey"
+                    android:digits="0123456789.,"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/txt_error_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edtChangeQuantity"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/pinky_red"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_uom_options"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@+id/edtChangeQuantity"
+                android:layout_weight="1"
+                android:background="@color/faint_grey"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/txt_uom_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/layout_change_product_quantity_txt_dec_quant_moq_text"
+                    android:textColor="@color/color_azul_two"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/img_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/arrow_blue_small_down" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_increase_quantity"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:background="@color/faint_grey"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/icon_grn_plus" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnchange_quantity_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_rounded_blue"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/txt_save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</RelativeLayout>

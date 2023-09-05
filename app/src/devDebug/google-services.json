@@ -1,0 +1,163 @@
+{
+  "project_info": {
+    "project_number": "326718917622",
+    "firebase_url": "https://zeemart-328560-dev.firebaseio.com",
+    "project_id": "zeemart-328560-dev",
+    "storage_bucket": "zeemart-328560-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326718917622:android:2ae284638603563b",
+        "android_client_info": {
+          "package_name": "zeemart.asia.buyers.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326718917622-7kepa2u0n6ik4qvomj8n2f1emk1aljvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "zeemart.asia.buyers.dev",
+            "certificate_hash": "353a051918b134dda684cf0a69f37a10fd121b4c"
+          }
+        },
+        {
+          "client_id": "326718917622-luh2sbmhhekprnbrehrnfk6lhgpcqd1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMsW3JXBcJLNF8KfD1uHak0tZt9R9Rm64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326718917622-luh2sbmhhekprnbrehrnfk6lhgpcqd1r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "326718917622-g9eg4vht5gcg7b77o01b7nscbr8koag0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "asia.zeemart.zeemart.buyer.my.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326718917622:android:a376dea507793186",
+        "android_client_info": {
+          "package_name": "zeemart.asia.buyers.id.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326718917622-luh2sbmhhekprnbrehrnfk6lhgpcqd1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMsW3JXBcJLNF8KfD1uHak0tZt9R9Rm64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326718917622-luh2sbmhhekprnbrehrnfk6lhgpcqd1r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "326718917622-g9eg4vht5gcg7b77o01b7nscbr8koag0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "asia.zeemart.zeemart.buyer.my.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326718917622:android:d61107208843c1ee",
+        "android_client_info": {
+          "package_name": "zeemart.asia.buyers.my.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326718917622-luh2sbmhhekprnbrehrnfk6lhgpcqd1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMsW3JXBcJLNF8KfD1uHak0tZt9R9Rm64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326718917622-luh2sbmhhekprnbrehrnfk6lhgpcqd1r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "326718917622-g9eg4vht5gcg7b77o01b7nscbr8koag0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "asia.zeemart.zeemart.buyer.my.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326718917622:android:07ddbe339c705da7",
+        "android_client_info": {
+          "package_name": "zeemart.asia.buyers.vn.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326718917622-luh2sbmhhekprnbrehrnfk6lhgpcqd1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMsW3JXBcJLNF8KfD1uHak0tZt9R9Rm64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326718917622-luh2sbmhhekprnbrehrnfk6lhgpcqd1r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "326718917622-g9eg4vht5gcg7b77o01b7nscbr8koag0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "asia.zeemart.zeemart.buyer.my.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_select_outlet_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_outlet_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        tools:text="Blue Bistro(Singlap)"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_toLeftOf="@+id/btn_mark_tick"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/faint_grey" />
+
+    <ImageButton
+        android:id="@+id/btn_mark_tick"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/transparent"
+        android:src="@drawable/bluetick"
+        />
+
+</RelativeLayout>

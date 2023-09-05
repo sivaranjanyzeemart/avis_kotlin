@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dismiss_bg"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:background="@color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:padding="7dp"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:textColor="@color/text_blue"
+                android:textAllCaps="false"
+                android:padding="5dp"
+                android:background="@drawable/btn_rounded_grey"
+                android:text="@string/txt_reset"/>
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_toEndOf="@id/btn_reset"
+                android:text="@string/txt_save"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:textAllCaps="false"
+                android:padding="5dp"
+                android:background="@drawable/blue_rounded_corner"/>
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/horizontalScrollView"
+                android:scrollbars="none"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="2dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:background="@color/white"
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/filtermarket_cardview"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/white_round_corner_dashboard"
+                        app:cardCornerRadius="35dp">
+
+                        <RelativeLayout
+                            android:id="@+id/lyt_category"
+                            android:layout_width="match_parent"
+                            android:scrollbars = "vertical"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_round_corner_dashboard"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_category"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@color/transparent"
+                                android:gravity="center"
+                                android:scrollbars="vertical"
+                                android:text="@string/txt_category"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:id="@+id/txt_number_of_categories"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/txt_category"
+                            android:background="@drawable/text_in_rounded_circle_red"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:visibility="gone"
+                            android:textSize="11sp"/>
+
+                            <TextView
+                                android:id="@+id/txt_btn_category_highlighter"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/black"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/filtermarket_cardview1"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toEndOf="@+id/filtermarket_cardview"
+                        android:background="@drawable/white_round_corner_dashboard"
+                        app:cardCornerRadius="35dp">
+
+                        <RelativeLayout
+                            android:id="@+id/lyt_supplier"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_round_corner_dashboard"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_supplier"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@color/transparent"
+                                android:text="@string/txt_supplier"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:id="@+id/txt_number_of_supplier"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/txt_supplier"
+                            android:background="@drawable/text_in_rounded_circle_red"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/txt_btn_supplier_highlighter"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/black"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/filtermarket_cardview2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toEndOf="@+id/filtermarket_cardview1"
+                        android:background="@drawable/white_round_corner_dashboard"
+                        app:cardCornerRadius="35dp">
+
+                        <RelativeLayout
+                            android:id="@+id/lyt_tags"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_round_corner_dashboard"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_tags"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@color/transparent"
+                                android:text="@string/txt_tag"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:id="@+id/txt_number_of_tags"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/txt_tags"
+                            android:background="@drawable/text_in_rounded_circle_red"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/txt_btn_tags_highlighter"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/black"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/filtermarket_cardview3"
+                        android:layout_width="140dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toEndOf="@+id/filtermarket_cardview2"
+                        android:background="@drawable/white_round_corner_dashboard"
+                        app:cardCornerRadius="35dp">
+
+                        <RelativeLayout
+                            android:id="@+id/lyt_certification"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/white_round_corner_dashboard"
+                            android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/txt_certification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@color/transparent"
+                            android:text="@string/txt_certification"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_number_of_certifications"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/txt_certification"
+                            android:background="@drawable/text_in_rounded_circle_red"
+                            android:gravity="center"
+                            android:layout_marginTop="2dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/txt_btn_certification_highlighter"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/black"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </HorizontalScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/relativelayout">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/filter_supplier_recyclerview"
+                    android:scrollbars="horizontal"
+                    android:overScrollMode="never"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    />
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/lyt_invoice_header_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="3dp"
+                android:visibility="gone"
+                android:scrollbars = "vertical"
+                android:orientation="vertical"
+                android:background="@color/white">
+
+              <!--  <RelativeLayout
+                    android:id="@+id/lyt_category"
+                    android:layout_width="0dp"
+                    android:scrollbars = "vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:text="@string/txt_category"
+                        android:textAllCaps="false"
+                        android:textColor="@color/grey_medium"
+                        android:textSize="14sp"
+                        android:scrollbars = "vertical"
+                        tools:ignore="DuplicateIds" />
+
+                    <TextView
+                        android:id="@+id/txt_number_of_categories"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@+id/txt_category"
+                        android:background="@drawable/text_in_rounded_circle_red"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:visibility="gone"
+                        android:textSize="11sp"/>
+
+
+                    <TextView
+                        android:id="@+id/txt_btn_category_highlighter"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/black"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+-->
+
+
+              <!--  <RelativeLayout
+                    android:id="@+id/lyt_tags"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_tags"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:text="@string/txt_tag"
+                        android:textAllCaps="false"
+                        android:textColor="@color/grey_medium"
+                        android:textSize="14sp"
+                        tools:ignore="DuplicateIds" />
+
+                    <TextView
+                        android:id="@+id/txt_number_of_tags"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@+id/txt_tags"
+                        android:background="@drawable/text_in_rounded_circle_red"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:visibility="gone" />
+
+
+                    <TextView
+                        android:id="@+id/txt_btn_tags_highlighter"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/black"
+                        android:visibility="gone" />
+
+                </RelativeLayout>-->
+
+               <!-- <RelativeLayout
+                    android:id="@+id/lyt_certification"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_certification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:text="@string/txt_certification"
+                        android:textAllCaps="false"
+                        android:textColor="@color/grey_medium"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txt_number_of_certifications"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@+id/txt_certification"
+                        android:background="@drawable/text_in_rounded_circle_red"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:visibility="gone" />
+
+
+                    <TextView
+                        android:id="@+id/txt_btn_certification_highlighter"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/black"
+                        android:visibility="gone" />
+
+                </RelativeLayout>-->
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/high_light"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/faint_grey" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_filter_tags"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_filter_categories"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_filter_suppliers"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_filter_certifications"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+
+                android:background="@color/white" />
+
+        </LinearLayout>
+
+   <!-- <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/nested_scroll"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_blue"
+            android:textAllCaps="false"
+            android:padding="5dp"
+            android:background="@drawable/btn_rounded_grey"
+            android:text="@string/txt_reset"/>
+        <Button
+            android:id="@+id/deny"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btn_reset"
+            android:layout_alignTop="@id/btn_reset"
+            android:text="@string/txt_save"
+            android:textColor="@color/white"
+            android:layout_marginStart="10dp"
+            android:textAllCaps="false"
+            android:background="@drawable/blue_rounded_corner"/>
+
+    </RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/lyt_tags_no_result"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/txt_no_result_tags_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:textColor="@color/dark_grey"
+                android:text="@string/txt_use_tags" />
+
+            <TextView
+                android:id="@+id/txt_no_result_tags_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:textAlignment="center"
+                android:textColor="@color/dark_grey"
+                android:text="@string/txt_go_to_buyer_hub" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lyt_categories_certification_no_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txt_no_result_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/txt_no_option"
+            android:textColor="@color/dark_grey"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/faint_grey"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".orders.createorders.BrowseCreateNewOrder">
+
+    <RelativeLayout
+        android:id="@+id/lyt_create_order_supplier_list_header"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@drawable/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_outlet_name_browse_new_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:maxWidth="200dp"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            tools:text="this is the outlet name and is very long" />
+
+        <ImageView
+            android:id="@+id/txt_heading_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txt_outlet_name_browse_new_order"
+            android:src="@drawable/arrow_yellow" />
+
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/search"
+        layout="@layout/activity_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_create_order_supplier_list_header"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyt_create_order_supplier_list_header" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/lyt_deals"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@color/faint_grey">
+
+                <TextView
+                    android:id="@+id/txt_deals_for_you"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/txt_deals_for_you"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_about_this_deals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="10dp"
+                    android:text="@string/txt_about_this_deals"
+                    android:visibility="gone"
+                    android:textColor="@color/text_blue"
+                    android:textSize="14sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="145dp"
+                    android:layout_below="@+id/txt_deals_for_you"
+                    app:cardCornerRadius="3dp">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/deals_view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/black_round_corner">
+
+                    </androidx.viewpager.widget.ViewPager>
+                </androidx.cardview.widget.CardView>
+                <RelativeLayout
+                    android:id="@+id/lyt_tab_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_deals_for_you"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/black_round_corner"
+                    android:elevation="5dp"
+                    android:padding="5dp">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_layout_carousal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="10dp"
+                        android:layout_centerInParent="true"
+                        app:tabBackground="@drawable/carousel_tab_selected"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"
+                        app:tabPaddingStart="1dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/lst_supplier_list_browse_new_order" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/suppliers_lyt_tab"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/lyt_deals"
+                android:layout_marginTop="3dp"
+                android:background="@color/white">
+
+                <Button
+                    android:id="@+id/browse_btn_my_supplier"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:text="@string/txt_my_suppliers"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/browse_txt_btn_my_supplier_highlighter"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/deliveries_btn_upcoming" />
+
+                <Button
+                    android:id="@+id/browse_btn_essentials"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:text="@string/txt_my_essentials"
+                    android:textAllCaps="false"
+                    android:textColor="@color/grey_medium"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txt_new"
+                    android:layout_width="27dp"
+                    android:layout_height="18dp"
+                    android:layout_alignTop="@+id/suppliers_lyt_tab"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/orange_round_corner"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="@string/txt_new"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/browse_btn_essentials"
+                    app:layout_constraintHorizontal_bias="0.69"
+                    app:layout_constraintStart_toStartOf="@+id/browse_btn_essentials"
+                    app:layout_constraintTop_toTopOf="@+id/browse_btn_essentials" />
+
+                <TextView
+                    android:id="@+id/browse_txt_btn_essentials_highlighter"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/black"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline3"
+                    app:layout_constraintTop_toBottomOf="@+id/deliveries_btn_past" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <RelativeLayout
+                android:id="@+id/lyt_no_suppliers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/suppliers_lyt_tab"
+                android:layout_marginTop="1dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_no_favourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/icon_no_activity" />
+
+                <TextView
+                    android:id="@+id/txt_no_favourite_yet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_no_favourite"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txt_no_suppliers_for_outlet"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_tap_fav_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_no_favourite_yet"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:text="@string/txt_find_out_more"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_supplier_list_browse_new_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suppliers_lyt_tab"
+                android:layout_marginTop="1dp"
+                android:background="@color/faint_grey"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/lyt_essential_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_below="@+id/suppliers_lyt_tab"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/lyt_banner"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_items_from_trusted_supplier"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_thousands_items_from_trusted_suppliers"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_get_up_to_5_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/get_up_to_5_rebate_with_every_essentials_order"
+                            android:textColor="@color/color_orange"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img_essentials_banner"
+                        android:layout_width="86dp"
+                        android:layout_height="62dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/white_essential_banner" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lyt_order_again"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyt_banner">
+
+                    <TextView
+                        android:id="@+id/txt_order_again"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/txt_order_again"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/lst_order_again"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_order_again"
+                        android:background="@color/faint_grey"
+                        android:orientation="horizontal" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_suppliers_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyt_order_again"
+                    android:paddingStart="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/txt_order_again"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lst_supplier_list_browse_essential_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_suppliers_count"
+                    android:background="@color/faint_grey"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/lst_supplier_list_browse_essential_order" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/lyt_review_order_browse"
+        layout="@layout/layout_order_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <zeemart.asia.buyers.helper.customviews.CustomLoadingViewWhite
+        android:id="@+id/spin_kit_loader_browse_suppliers_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="2dp"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_order_list_row"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:layout_marginBottom="2dp"
+    android:background="@color/white"
+    tools:ignore="MissingPrefix"
+    tools:context="zeemart.asia.buyers.activities.BaseNavigationActivity">
+
+    <TextView
+        android:id="@+id/dashboard_text_draft_indicator"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@color/pinky_red"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/lyt_supplier_thumbnail"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_supplier_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLength="2"
+            android:text="AS"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/dashboard_img_supplier"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/placeholder_all"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="13sp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dashboard_img_supplier"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/dashboard_txt_supplier_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/btn_new_invoice"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="The Fresh Grocer Pte Ltd." />
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dashboard_txt_supplier_name"
+            android:layout_marginTop="3dp"
+            android:layout_toStartOf="@+id/btn_new_invoice"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/dashboard_img_truck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="5dp"
+                android:cropToPadding="false"
+                android:src="@drawable/img_red_warning"
+                app:layout_constraintEnd_toStartOf="@+id/dashboard_txt_uploads"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/dashboard_img_supplier"
+                app:layout_constraintStart_toStartOf="@+id/dashboard_txt_supplier_name"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name" />
+
+            <ImageView
+                android:id="@+id/tick_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:src="@drawable/tick_green"/>
+
+            <TextView
+                android:id="@+id/txt_skipped_upload_not_required"
+                fontPath="fonts/SourceSansPro-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp"
+                android:text="@string/txt_upload_not_required_skipped"/>
+
+
+            <TextView
+                android:id="@+id/dashboard_txt_uploads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:textColor="@color/grey_medium"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/dashboard_txt_delivery_date"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/dashboard_img_truck"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name"
+                tools:text="27 Nov" />
+
+            <TextView
+                android:id="@+id/dashboard_txt_delivery_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:textColor="@color/grey_medium"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/dashboard_txt_outlet_name"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/dashboard_txt_uploads"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name"
+                tools:text="27 Nov" />
+
+
+            <TextView
+                android:id="@+id/dashboard_txt_outlet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_new_invoice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/dashboard_txt_delivery_date"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name"
+                tools:text="Cafe Blue is a very long outlet name please see next line" />
+
+            <ImageView
+                android:id="@+id/add_plus"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/icon_add_on_green"
+                android:layout_marginStart="5dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/btn_new_invoice"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/dashboard_txt_outlet_name"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_new_invoice"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/btn_rounded_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_upload"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

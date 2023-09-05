@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/txt_cancel_orderoption"
+        android:title="@string/txt_cancel_order_btn_text" />
+    <item
+        android:id="@+id/txt_receive_order_option"
+        android:title="@string/txt_receive" />
+    <item
+        android:id="@+id/txt_reject_order_option"
+        android:title="@string/txt_reject" />
+    <item
+        android:id="@+id/txt_view_as_pdfview"
+        android:title="@string/txt_view_as_pdf" />
+    <item
+        android:id="@+id/txt_download_pdfview"
+        android:title="@string/txt_download_pdf" />
+    <item
+        android:id="@+id/txt_report_issue_mistakeview"
+        android:title="@string/txt_report_issue_or_mistake"
+        android:visible="false"/>
+
+</menu>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_home_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/black"
+    android:focusableInTouchMode="true"
+    tools:context="zeemart.asia.buyers.orders.DashboardFragment">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_home_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/txt_review_order_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/zmlogowhite" />
+
+        <ImageView
+            android:id="@+id/img_notification_icon"
+            android:layout_width="30dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/notiftab" />
+
+        <TextView
+            android:id="@+id/txt_number_of_unread_notifications"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="11dp"
+            android:background="@drawable/text_in_rounded_circle_red"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/lyt_home_top_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/relative_layout_home_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/txt_lyt_navigation_bg_grey"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:background="@color/faint_grey"
+                android:paddingBottom="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/white_round_corner"
+            android:elevation="2dp"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <Button
+                android:id="@+id/btn_home_repeat_order"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableTop="@drawable/repeatorder"
+                android:gravity="center_vertical|bottom"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:text="@string/txt_repeat_order"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/grey_medium"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/faint_grey" />
+
+            <Button
+                android:id="@+id/btn_home_new_order"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableTop="@drawable/neworder"
+                android:gravity="center_vertical|bottom"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:text="@string/txt_order"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/grey_medium"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/faint_grey" />
+
+            <Button
+                android:id="@+id/btn_home_view_order"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableTop="@drawable/vieworders"
+                android:gravity="center_vertical|bottom"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:text="@string/txt_view_orders"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/grey_medium"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/faint_grey" />
+
+            <Button
+                android:id="@+id/btn_home_deliveries"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableTop="@drawable/truckdeliveries"
+                android:gravity="center_vertical|bottom"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:text="@string/txt_deliveries"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/grey_medium"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:background="@color/faint_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_home_top_navigation"
+        app:layout_constraintVertical_bias="0.0">
+
+        <zeemart.asia.buyers.helper.customviews.CustomLoadingViewBlue
+            android:id="@+id/spin_kit_loader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/lyt_swipe_refresh_orders_home"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/faint_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spin_kit_loader">
+
+            <RelativeLayout
+                android:id="@+id/lyt_scroll_review_order"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/faint_grey">
+
+                <RelativeLayout
+                    android:id="@+id/lyt_order_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/faint_yellow"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/img_info"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/inventory_info_yellow" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/img_info"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_add_on_order_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_orders_currently_disabled"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_add_on_order_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_tap_to_review_settings"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lst_dashboard_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/lyt_order_settings"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/faint_grey" />
+            </RelativeLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

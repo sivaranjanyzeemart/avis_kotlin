@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_order_list_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context="zeemart.asia.buyers.activities.BaseNavigationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lyt_dashboard_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/dashboard_img_supplier"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/placeholder_all"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/lyt_supplier_thumbnail"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txt_supplier_thumbnail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:maxLength="2"
+                android:text="AS"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/dashboard_txt_supplier_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintRight_toLeftOf="@id/guideline_vertical"
+            app:layout_constraintStart_toEndOf="@+id/dashboard_img_supplier"
+            app:layout_constraintTop_toTopOf="@+id/dashboard_img_supplier"
+            tools:text="The Fresh Grocer Pte Ltd." />
+
+        <ImageView
+            android:id="@+id/dashboard_img_truck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:cropToPadding="false"
+            android:src="@drawable/truck"
+            app:layout_constraintEnd_toStartOf="@+id/dashboard_txt_delivery_date"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dashboard_img_supplier"
+            app:layout_constraintStart_toStartOf="@+id/dashboard_txt_supplier_name"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name" />
+
+        <TextView
+            android:id="@+id/dashboard_txt_delivery_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/dashboard_txt_outlet_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/dashboard_img_truck"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name"
+            tools:text="27 Nov" />
+
+        <TextView
+            android:id="@+id/dashboard_txt_outlet_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:includeFontPadding="false"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/dashboard_txt_order_id"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/dashboard_txt_delivery_date"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_supplier_name"
+            tools:text="Cafe Blue is a very long outlet name please see next line" />
+
+        <TextView
+            android:id="@+id/dashboard_txt_order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="4dp"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/dashboard_img_truck"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_outlet_name"
+            tools:text="Needs your approval" />
+
+        <ImageView
+            android:id="@+id/img_recurring_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:src="@drawable/recurring_order_view_order"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/dashboard_txt_order_status"
+            app:layout_constraintTop_toTopOf="@+id/dashboard_txt_order_status" />
+
+        <TextView
+            android:id="@+id/txt_order_list_order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="3dp"
+            android:textColor="@color/grey_medium"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/dashboard_txt_order_status"
+            app:layout_constraintStart_toEndOf="@+id/img_recurring_order"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_outlet_name"
+            tools:text="#123456789" />
+
+        <TextView
+            android:id="@+id/dashboard_txt_order_created_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dashboard_txt_supplier_name"
+            tools:text="25 Nov" />
+
+        <TextView
+            android:id="@+id/dashboard_txt_order_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:paddingBottom="15dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dashboard_txt_order_status"
+            tools:text="$300.50" />
+
+        <TextView
+            android:id="@+id/dashboard_txt_order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_txt_order_created_date"
+            app:layout_constraintTop_toTopOf="@+id/dashboard_txt_outlet_name"
+            tools:text="#2013456789" />
+
+        <TextView
+            android:id="@+id/dashboard_text_draft_indicator"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            android:background="@color/text_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/img_swipe_right_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/three_dots"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dashboard_img_supplier"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_swipe_left_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/three_dots"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/dashboardRow_progressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/faint_grey"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

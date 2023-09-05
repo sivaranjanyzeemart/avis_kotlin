@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="38dp"
+        android:paddingTop="24dp"
+        android:paddingRight="38dp"
+        android:src="@drawable/tick_receive_big"
+        android:paddingBottom="10dp"/>
+    <TextView
+        android:id="@+id/txt_small_dialog_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_received"
+        android:gravity="center"
+        android:singleLine="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="24dp"/>
+</LinearLayout>

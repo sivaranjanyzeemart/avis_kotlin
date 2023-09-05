@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:background="@color/white"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp">
+
+    <RelativeLayout
+        android:id="@+id/lyt_company_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/img_company_image"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp" />
+
+        <TextView
+            android:id="@+id/txt_company_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/img_company_image"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingRight="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="ABC Food Holdings Pte Ltd" />
+
+        <TextView
+            android:id="@+id/txt_company_outlet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_company_title"
+            android:layout_alignLeft="@+id/txt_company_title"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingRight="10dp"
+            android:textColor="@color/grey_medium"
+            android:textSize="12dp"
+            tools:text="2 outlets" />
+
+        <TextView
+            android:id="@+id/txt_company_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_company_outlet"
+            android:layout_alignLeft="@+id/txt_company_title"
+            android:layout_marginTop="5dp"
+            android:background="@color/pinky_red"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingTop="2dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            tools:text="Unverified" />
+
+        <RelativeLayout
+            android:id="@+id/lyt_grab_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_company_status"
+            android:layout_alignStart="@+id/txt_company_title"
+            android:layout_marginTop="7dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_grab_finance"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/icon_grab_small"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/txt_grab_finance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/img_grab_finance"
+                android:includeFontPadding="false"
+                android:text="@string/txt_grabfinance_balance"
+                android:textColor="@color/dark_grey"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txt_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

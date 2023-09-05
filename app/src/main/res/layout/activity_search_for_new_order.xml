@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/faint_grey"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".orders.createorders.SearchForNewOrder">
+
+
+
+    <RelativeLayout
+        android:id="@+id/lyt_search_supplier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_header"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            layout="@layout/activity_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:paddingStart="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/search_btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:padding="7dp"
+            android:text="@string/txt_report_search_cancel"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+    <zeemart.asia.buyers.helper.customviews.CustomLoadingViewBlue
+        android:id="@+id/spin_kit_loader_report_search_white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/faint_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_search_supplier" />
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spin_kit_loader_report_search_white">
+
+        <RelativeLayout
+            android:id="@+id/lyt_recent_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_recent_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/txt_report_search_recent"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/txt_recent_search_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/txt_report_search_clear"
+                android:textColor="@color/color_azul_two"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+
+            <ListView
+                android:id="@+id/lst_recent_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_recent_search"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/suppliers_lyt_tab"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white">
+
+                <Button
+                    android:id="@+id/browse_btn_my_supplier"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:text="@string/txt_my_suppliers"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:paddingEnd="5dp"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@id/guideline3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txt_number_of_mysuppliers"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignTop="@+id/suppliers_lyt_tab"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/text_in_rounded_circle_red"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="11dp"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/browse_btn_my_supplier"
+                    app:layout_constraintHorizontal_bias="0.69"
+                    app:layout_constraintStart_toStartOf="@+id/browse_btn_my_supplier"
+                    app:layout_constraintTop_toTopOf="@+id/browse_btn_my_supplier" />
+
+                <TextView
+                    android:id="@+id/browse_txt_btn_my_supplier_highlighter"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/browse_btn_my_supplier" />
+
+                <Button
+                    android:id="@+id/browse_btn_essentials"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:text="@string/txt_deals_essentials"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:textColor="@color/grey_medium"
+                    android:textSize="14sp"
+                    android:paddingEnd="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txt_number_of_essentials"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignTop="@+id/suppliers_lyt_tab"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/text_in_rounded_circle_red"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="11dp"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/browse_btn_essentials"
+                    app:layout_constraintHorizontal_bias="0.69"
+                    app:layout_constraintStart_toStartOf="@+id/browse_btn_essentials"
+                    app:layout_constraintTop_toTopOf="@+id/browse_btn_essentials" />
+
+                <TextView
+                    android:id="@+id/browse_txt_btn_essentials_highlighter"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:background="@color/black"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline3"
+                    app:layout_constraintTop_toBottomOf="@+id/browse_btn_essentials" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <RelativeLayout
+                android:id="@+id/lyt_no_search_results"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/faint_grey"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_search">
+
+                <ImageView
+                    android:id="@+id/image_no_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/no_search_result" />
+
+                <TextView
+                    android:id="@+id/txt_no_search_found"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_no_result"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/txt_no_results"
+                    android:textColor="@color/grey_medium"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_try_with_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_no_search_found"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:text="@string/txt_no_search_result"
+                    android:textColor="@color/grey_medium"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_search_supplier"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/faint_grey"
+                android:clipToPadding="false"
+                android:paddingBottom="80dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_search_essentials"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/faint_grey"
+                android:clipToPadding="false"
+                android:visibility="gone"
+                android:paddingBottom="80dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/lst_search_supplier" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/lyt_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/txt_new_order_edt_search_supplier_product"
+                android:textAlignment="center"
+                android:textColor="@color/grey_medium"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/lyt_review_order_search"
+        layout="@layout/layout_order_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

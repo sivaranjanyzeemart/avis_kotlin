@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_supplier_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/img_supplier_new_order"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/placeholder_all" />
+
+    <RelativeLayout
+        android:id="@+id/lyt_supplier_thumbnail"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_supplier_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLength="2"
+            android:text="AS"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_supplier_name_new_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_supplier_new_order"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/img_supplier_new_order"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="The Fresh Grocer Pte. Ltd" />
+
+    <TextView
+        android:id="@+id/txt_date_type_new_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_supplier_name_new_order"
+        android:layout_alignLeft="@+id/txt_supplier_name_new_order"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/img_supplier_new_order"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:textColor="#9b9b9b"
+        android:textSize="12sp"
+        tools:text="Next delivery : 27 Nov . Fresh Fruits and Vegetables" />
+
+    <RelativeLayout
+        android:id="@+id/lyt_more_than"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_supplier_new_order"
+        android:background="@color/faint_grey"
+        android:clickable="false"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_more_than"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="@string/txt_suppliers_with_more_than_days"
+            android:textAlignment="center"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="25dp"
+    android:layout_marginTop="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/lyt_coupon_details"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_coupon_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/txt_coupon_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/img_coupon_image"
+            tools:text="Up to $50 OFF first order for all outlets"
+            android:paddingRight="10dp"
+            android:textSize="16sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/txt_coupon_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_coupon_title"
+            android:layout_alignLeft="@+id/txt_coupon_title"
+            tools:text="Minimum order $100.00"
+            android:textSize="12dp"
+            android:paddingRight="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/grey_medium"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lyt_coupon_details"
+        android:layout_marginTop="11dp"
+        android:paddingRight="15dp"
+        android:background="@drawable/grey_rounded_corner">
+        <ImageView
+            android:id="@+id/img_promo_detail_voucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/voucher_grey"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"/>
+        <TextView
+            android:id="@+id/txt_voucher_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_medium"
+            android:textAllCaps="true"
+            tools:text="FIRSTTIME"
+            android:layout_toRightOf="@id/img_promo_detail_voucher"
+            android:layout_marginLeft="8dp"
+            android:layout_centerVertical="true"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true">
+            <TextView
+                android:id="@+id/txt_use_promo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_use_promo"
+                android:textSize="14sp"
+                android:textColor="@color/text_blue"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"/>
+            <ImageView
+                android:id="@+id/img_coupon_applied_tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/green_small_tick"
+                android:layout_marginLeft="7dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

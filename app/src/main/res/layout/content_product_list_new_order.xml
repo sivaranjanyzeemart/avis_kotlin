@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zeemart.asia.buyers.orders.createorders.ProductListNewOrderActivity"
+    tools:showIn="@layout/activity_product_list_new_order">
+    <zeemart.asia.buyers.helper.customviews.CustomLoadingViewWhite
+        android:id="@+id/spin_kit_loader_product_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:elevation="3dp"/>
+    <RelativeLayout
+        android:id="@+id/lyt_no_filter_results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_product_list_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <ImageView
+            android:id="@+id/img_no_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/no_search_result"/>
+        <TextView
+            android:id="@+id/txt_no_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/content_orders_txt_no_search_1_text"
+            android:textSize="14sp"
+            android:layout_below="@id/img_no_result"/>
+        <TextView
+            android:id="@+id/txt_deselect_filters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:textSize="14sp"
+            android:text="@string/txt_no_search_result"
+            android:layout_below="@id/txt_no_result"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/lyt_product_list_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_header"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_product_list_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/txt_add_to_order"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_select_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/txt_product_list_heading"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:text="@string/txt_select_all"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+        <EditText
+            android:id="@+id/edit_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_product_list_heading"
+            android:background="@drawable/btn_rounded_white"
+            android:hint="@string/content_product_list_new_order_edt_search_hint"
+            android:lines="1"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:padding="7dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/search_icon_black"
+            android:drawablePadding="8dp"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/search_btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_report_search_cancel"
+            android:textSize="16sp"
+            android:layout_marginStart="5dp"
+            android:layout_below="@id/txt_product_list_heading"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:padding="7dp"
+            android:layout_alignParentEnd="true"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/lyt_recent_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="2dp"
+        android:visibility="gone"
+        android:background="@color/faint_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyt_product_list_header">
+        <TextView
+            android:id="@+id/txt_recent_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_report_search_recent"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="15dp"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/txt_recent_search_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_report_search_clear"
+            android:textColor="@color/chart_blue"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" />
+        <ListView
+            android:id="@+id/lst_recent_search"
+            android:layout_below="@id/txt_recent_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lstProductList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/faint_grey"
+        app:layout_constraintBottom_toTopOf="@+id/lyt_review_items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_product_list_header">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/lyt_review_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <!--        <ImageView-->
+        <!--            android:id="@+id/btn_filter"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@drawable/blue_rounded_corner"-->
+        <!--            android:padding="15dp"-->
+        <!--            android:visibility="gone"-->
+        <!--            android:layout_marginEnd="10dp"-->
+        <!--            android:src="@drawable/filtericon"-->
+        <!--            />-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/txt_number_of_selected_filters"-->
+        <!--            android:layout_width="16dp"-->
+        <!--            android:layout_height="16dp"-->
+        <!--            android:background="@drawable/text_in_rounded_circle_red"-->
+        <!--            android:visibility="gone"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:layout_marginStart="28dp"-->
+        <!--            android:layout_marginLeft="28dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginEnd="5dp"-->
+        <!--            android:text="0"-->
+        <!--            android:textSize="11sp"-->
+        <!--            android:textAlignment="center"-->
+        <!--            android:layout_marginRight="5dp" />-->
+        <Button
+            android:id="@+id/btnProductSelectionDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_rounded_corner"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/txt_done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

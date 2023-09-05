@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/txt_delivery_date_breakdown_supplier_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_blue"
+        android:textSize="12sp"
+        tools:text="Wed, 25 Dec 2020"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/img_truck_icon_breakdown_supplier_list"
+        />
+    <ImageView
+        android:id="@+id/img_truck_icon_breakdown_supplier_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/truck_mini_icon"
+        android:layout_alignParentLeft="true"/>
+</RelativeLayout>

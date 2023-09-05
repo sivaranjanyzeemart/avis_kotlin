@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white"
+    android:paddingLeft="20dp"
+    android:paddingTop="12dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="12dp">
+
+
+    <TextView
+        android:id="@+id/txt_inventory_list_item_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Storage cupboards" />
+
+    <TextView
+        android:id="@+id/txt_inventory_list_item_no_of_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_inventory_list_item_heading"
+        android:layout_alignLeft="@+id/txt_inventory_list_item_heading"
+        android:textColor="@color/dark_grey"
+        android:textSize="18sp"
+        tools:text="76 items" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastCount"
+        android:layout_below="@+id/txt_inventory_list_item_no_of_items"
+        android:layout_alignLeft="@+id/txt_inventory_list_item_no_of_items"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_out_of_stock_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pinky_red"
+            android:textSize="11sp"
+            tools:text="Counted 1 day ago" />
+
+        <TextView
+            android:id="@+id/txt_inventory_list_counted_days_ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_grey"
+            android:textSize="11sp"
+            tools:text="Counted 1 day ago" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_inventory_list_draft_saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lastCount"
+        android:layout_alignLeft="@+id/txt_inventory_list_item_heading"
+        android:textColor="@color/color_azul_two"
+        android:textSize="11sp"
+        tools:text="@string/txt_inventory_draft_saved" />
+
+    <Button
+        android:id="@+id/btn_inventory_list_item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn_azul_blue"
+        android:drawableLeft="@drawable/plus_white"
+        android:gravity="right|center_vertical"
+        android:includeFontPadding="false"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:text="@string/txt_count"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</RelativeLayout>

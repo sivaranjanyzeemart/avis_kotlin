@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:id="@+id/lyt_review_invoice_row"
+    android:layout_marginBottom="2dp"
+    android:padding="15dp">
+
+    <CheckBox
+        android:id="@+id/check_box_select_invoice_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/check_box_select_invoice_payment"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_invoice_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="#ZH-00199921" />
+
+        <TextView
+            android:id="@+id/txt_invoice_over_due"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:textSize="12sp"
+            tools:text="2 days overdue" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_invoice_due_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/color_azul_two"
+        android:textSize="16sp"
+        tools:text="$1,200.00" />
+</RelativeLayout>

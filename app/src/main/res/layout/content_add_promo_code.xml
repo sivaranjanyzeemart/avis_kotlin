@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:background="@color/white"
+app:layout_behavior="@string/appbar_scrolling_view_behavior"
+tools:context=".orders.createorders.AddPromoCodeActivity">
+
+    <RelativeLayout
+        android:id="@+id/lyt_promo_code_header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_promo_code_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="@string/txt_promo_code"/>
+
+        <ImageButton
+            android:id="@+id/btn_back_promo_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@color/black"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/white_arrow_left" />
+
+    </RelativeLayout>
+    <zeemart.asia.buyers.helper.customviews.CustomLoadingViewWhite
+        android:id="@+id/spin_kit_loader_add_promo_code_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_promo_code_header"
+        android:elevation="2dp" />
+    <RelativeLayout
+        android:id="@+id/lyt_enter_promo_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_promo_code_header">
+
+        <Button
+            android:id="@+id/btn_apply_promo_code"
+            android:layout_width="93dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/txt_search"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:background="@drawable/rect_rounded_right_grey"
+            android:gravity="center"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_toLeftOf="@id/btn_apply_promo_code"
+            android:background="@drawable/rect_rounded_left_faint_grey">
+
+            <ImageButton
+                android:id="@+id/btn_delete_search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="12dp"
+                android:background="@color/transparent"
+                android:src="@drawable/grey_small_cross"/>
+            <EditText
+                android:id="@+id/edt_enter_promo_code"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textAllCaps="true"
+                android:layout_toLeftOf="@+id/btn_delete_search_text"
+                android:background="@color/transparent"
+                android:gravity="center_vertical|left"
+                android:hint="@string/txt_enter_promo_code"
+                android:paddingLeft="11dp"
+                android:inputType="text"
+                android:imeActionLabel="@string/txt_search"
+                android:imeOptions="actionDone"
+                android:textSize="16sp"
+                android:textColorHint="@color/grey_medium" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lst_promo_code"
+        android:background="@color/faint_grey"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_enter_promo_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

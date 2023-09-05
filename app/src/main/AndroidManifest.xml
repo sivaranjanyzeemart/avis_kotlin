@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="zeemart.asia.buyers">
+
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:name=".ZeemartBuyerApp"
+        android:allowBackup="true"
+        android:fullBackupContent="false"
+        android:grantUriPermissions="true"
+        android:icon="${appIcon}"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="${appIconRound}"
+        android:usesCleartextTraffic="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".inventory.ViewStockMovementsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".inventory.SelectTransferInFromLocation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".more.AppLockSettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.UploadInvoicesForNonZmOrders"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.UploadInvoiceForOrders"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.RejectedInvoicesListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".inventory.UomConversionRecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".inventory.AmendmentRecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".inventory.SaveAmendmentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Translucent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".orders.OrderSettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.MergeInvoicesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".invoices.InvoicePreReviewPage"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".goodsReceivedNote.GrnDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".goodsReceivedNote.GrnImageViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".goodsReceivedNote.GRNProductListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".goodsReceivedNote.GoodsReceivedNoteDashBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".inventory.ReviewInventoryUOMSettings"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".login.SelectCuisineTypeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${hostNameAppLink}"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${hostNameAppLink}"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".selfOnBoarding.WelcomeScreenActivity" />
+        <activity
+            android:name=".login.CreateCompanyOutlet"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".selfOnBoarding.SelfOnBoardingSearchedCategoriesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".orders.createorders.SearchedCategoriesProductsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".login.BuyerLoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".selfOnBoarding.SearchOnBoardingEssentialsDealsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".selfOnBoarding.EssentialsOnBoardingProductListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".selfOnBoarding.DealsOnBoardingProductListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".selfOnBoarding.BrowseDealAndEssentialsSuppliers"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".selfOnBoarding.EnterAddressActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".orderPayments.AddCardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity android:name=".companies.CompanyVerificationRequestActivity" />
+        <activity android:name=".companies.ViewOutletActivity" />
+        <activity android:name=".companies.CompaniesListActivity" />
+        <activity
+            android:name=".UserAgreementAndTermsPolicy.UserAgreementActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".invoices.AdjustInvoiceImageWithOutCropping"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".invoices.AdjustInvoiceImage"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".essentials.EssentialsProductListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".deals.DealProductListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".orders.createorders.ActivityOrderSummaryPreview"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" /> <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->
+        <activity
+            android:name=".orders.createorders.SearchForNewOrder"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".orders.createorders.BrowseCreateNewOrder"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".orders.createorders.AddToOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".more.PromoCodeDetailsActivity"
+            android:label="@string/title_activity_promo_code_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".more.AllPromoCodesActivity"
+            android:label="@string/title_activity_all_promo_codes"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".login.LoginActivityDepricated"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".login.VerifyCodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".login.ResetPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".login.ChangePasswordActivity"
+            android:label="@string/title_activity_change_password"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.BaseNavigationActivity"
+            android:configChanges="locale"
+            android:label="@string/title_activity_base"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".orders.createordersimport.SelectOutletActivity"
+            android:label="@string/title_activity_select_outlet"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".invoices.filter.FilterInvoiceActivity"
+            android:label="@string/title_activity_filter_invoice"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".orders.createorders.RepeatOrderActivity"
+            android:label="@string/title_activity_repeat_order"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".orders.createordersimport.CreateOrderSupplierListActivity"
+            android:label="@string/title_activity_create_order_supplier_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".orders.createordersimport.ProductListNewOrderActivity"
+            android:label="@string/title_activity_product_list_new_order"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" /> <!-- <service android:name=".services.MyFirebaseInstanceIDService"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <activity
+            android:name=".notifications.NotificationsActivity"
+            android:label="@string/title_activity_notifications"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".orders.createorders.ReviewOrderActivity"
+            android:label="@string/title_activity_review_order"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".orders.vieworders.ViewOrdersActivity"
+            android:label="@string/title_activity_orders"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".orders.deliveries.DeliveryListingActivity"
+            android:label="@string/title_activity_delivery_listing"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".orders.filter.FilterOrdersActivity"
+            android:label="@string/title_activity_filter_orders"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".orders.OrderDetailsActivity"
+            android:label="@string/title_activity_order_details"
+            android:parentActivityName=".activities.BaseNavigationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.BaseNavigationActivity" />
+        </activity>
+        <activity
+            android:name=".orders.OrderProcessingPlacedActivity"
+            android:label="@string/title_activity_order_processing"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.InvoiceDetailActivity"
+            android:label="@string/title_activity_invoice_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".more.ChangePasswordSettingActivity"
+            android:label="@string/title_activity_change_password_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".orders.ProductDetailActivity"
+            android:label="@string/title_activity_product_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.SliderActivityTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".reports.reportsummary.ReportsDashboardActivity"
+            android:label="@string/title_activity_reports_dashboard"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".reports.reporttotalspending.ReportTotalSpendingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_report_total_spending"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/csv" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".reports.ReportsSpendingDetailsActivity"
+            android:label="@string/title_activity_reports_spending_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".reports.ReportPriceUpdateActivity"
+            android:label="@string/title_activity_report_price_update"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".reports.reportpendingbysku.ReportsSpendingBySKUActivity"
+            android:label="@string/title_activity_reports_spending_by_sku"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".activities.UpdateAppDialogActivity"
+            android:label="@string/title_activity_update_app_dialog"
+            android:screenOrientation="portrait"
+            android:theme="@style/noDimTheme" />
+        <activity
+            android:name=".orders.OrderHistoryLogActivity"
+            android:label="@string/title_activity_order_history_log"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.InvoiceCameraPreview"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_camera_priview"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.ReviewInvoiceImageActivity"
+            android:label="@string/title_activity_review_invoice_image"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".reports.reportsummary.ReportSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".orders.ContactSupplierDetailsActivity" />
+        <activity android:name=".reports.reportsummary.ExportReportCsvFileActivity" />
+        <activity
+            android:name=".notifications.NotificationSettings"
+            android:label="@string/title_activity_notification_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".inventory.InventoryDashboardActivity"
+            android:label="@string/title_activity_inventory_dashboard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".inventory.FilterInventoryActivity"
+            android:label="@string/title_activity_filter_inventory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".inventory.InventorySettingsActivity"
+            android:label="@string/title_activity_inventory_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".inventory.ShelveProductsListActivity"
+            android:label="@string/title_activity_inventory_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".inventory.StockCountActivity"
+            android:label="@string/title_activity_stock_count"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".inventory.DeleteCountActivity"
+            android:label="@string/title_activity_delete_count"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".inventory.SaveAdjustmentActivity"
+            android:label="@string/title_activity_save_adjustment"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Translucent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".inventory.UomOptionsSelectActivity"
+            android:label="@string/title_activity_save_adjustment"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Translucent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".inventory.StockCountDetailActivity"
+            android:label="@string/title_activity_stock_count_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".inventory.AdjustmentRecordActivity"
+            android:label="@string/title_activity_adjustment_record"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".orders.createorders.AddPromoCodeActivity"
+            android:label="@string/title_activity_add_promo_code"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".notifications.NotificationAnnouncementDetails"
+            android:label="@string/title_activity_notification_announcement_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.RejectedInvoiceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".invoices.ReviewMultipleInvoicePaymentActivity"
+            android:label="@string/title_activity_review_multiple_invoice_payment"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".invoices.PayInvoicesActivity"
+            android:label="@string/title_activity_pay_invoices"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".deals.AboutDealsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".deals.DealDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".deals.ReviewDealsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".orderPayments.OrderPaymentListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".orderPayments.BankTransferActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity
+            android:name=".orderPayments.PayNowActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+        <activity android:name="com.yongchun.library.view.ImageSelectorActivity" />
+        <activity android:name="com.yongchun.library.view.ImagePreviewActivity" />
+        <activity android:name="com.yongchun.library.view.ImageCropActivity" />
+        <activity
+            android:name=".orderPayments.PaymentConfirmation"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".essentials.EssentialSupplierDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimTopBottom" />
+        <activity
+            android:name=".essentials.ReviewEssentialsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityThemeAnimLeftRight" />
+
+        <meta-data
+            android:name="CLEVERTAP_ACCOUNT_ID"
+            android:value="WW4-6WW-W75Z" />
+        <meta-data
+            android:name="CLEVERTAP_TOKEN"
+            android:value="006-400" />
+        <meta-data
+            android:name="CLEVERTAP_USE_GOOGLE_AD_ID"
+            android:value="1" />
+        <meta-data
+            android:name="CLEVERTAP_REGION"
+            android:value="sg1" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/notification_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.zeemart.asia.buyers.fileprovider"
+            android:enabled="true"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name=".services.NotificationActionReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="NOTIFICATION_ACTION_APPROVE" />
+                <action android:name="NOTIFICATION_ACTION_VIEW" />
+            </intent-filter>
+        </receiver>
+
+
+        <service
+            android:name=".services.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_icon"
+                android:resource="@drawable/notification_icon" />
+        </service>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

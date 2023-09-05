@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_notif_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:background="@color/white"
+    android:paddingTop="10dp">
+
+    <ImageView
+        android:id="@+id/img_notif"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        app:srcCompat="?android:attr/actionModeSelectAllDrawable" />
+
+    <RelativeLayout
+        android:id="@+id/lyt_supplier_thumbnail"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_supplier_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLength="2"
+            android:text="AS"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_notif_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_notif"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/img_notif"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        tools:text="Details" />
+
+    <TextView
+        android:id="@+id/txt_time_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_notif_details"
+        android:layout_alignStart="@+id/txt_notif_details"
+        android:layout_alignLeft="@+id/txt_notif_details"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="14dp"
+        android:textColor="@color/dark_grey"
+        android:textSize="11dp"
+        tools:text="TextView" />
+
+</RelativeLayout>

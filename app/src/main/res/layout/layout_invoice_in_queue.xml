@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:background="@color/white"
+    android:layout_marginBottom="4dp"
+    android:id="@+id/lyt_in_queue_row"
+    tools:context="zeemart.asia.buyers.activities.BaseNavigationActivity">
+
+    <TextView
+        android:id="@+id/upload_failed_indicator"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@color/pinky_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <ImageView
+        android:id="@+id/upload_tab_invoice_image"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="12dp"
+        android:src="@drawable/placeholder_all"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/checkBox_select_in_queue_invoice"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_time_uploaded"
+        app:layout_constraintStart_toEndOf="@id/upload_tab_invoice_image"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_image_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="6 files" />
+
+        <TextView
+            android:id="@+id/txt_invoice_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="12sp"
+            android:layout_below="@+id/txt_image_name"
+            tools:text="In queue for processing" />
+
+        <ProgressBar
+            android:id="@+id/progressBar_uploading_invoice"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txt_invoice_status"
+            android:layout_below="@+id/txt_image_name"
+            android:layout_marginLeft="5dp"
+            android:indeterminate="true"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/img_swipe_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/three_dots"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_time_uploaded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/img_swipe_indicator"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="22 mins ago" />
+
+    <!-- <TextView
+         android:layout_width="match_parent"
+         android:layout_height="4dp"
+         android:background="@color/faintgrey"
+         app:layout_constraintBottom_toBottomOf="parent" />-->
+
+    <ImageButton
+        android:id="@+id/img_retry_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/img_swipe_indicator"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/retry"
+        android:background="@color/transparent"/>
+    <CheckBox
+        android:id="@+id/checkBox_select_in_queue_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

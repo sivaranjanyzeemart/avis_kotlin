@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_details"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_repeat_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgReceiptStatus"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <RelativeLayout
+                android:id="@+id/lyt_receipt_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imgReceiptStatus">
+
+                <RelativeLayout
+                    android:id="@+id/lyt_receipt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@color/transparent"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/txtReceiptEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:text="vineet@zeemart.asia" />
+
+                    <ImageView
+                        android:id="@+id/img_whats_app"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@id/txtReceiptEmail"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/whatsapp_grey"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/txt_whats_app"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtReceiptEmail"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_toRightOf="@id/img_whats_app"
+                        android:text="@string/txt_whats_app"
+                        android:textColor="@color/grey_medium"
+                        android:textSize="10sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtReceiptStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/lyt_receipt_name"
+                    android:background="@color/transparent"
+                    android:gravity="right"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="0dp"
+                    android:textColor="@color/green"
+                    android:textSize="10sp"
+                    tools:text="Opened" />
+
+                <TextView
+                    android:id="@+id/txtReceiptTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtReceiptStatus"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/transparent"
+                    android:gravity="right"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/grey_medium"
+                    android:textSize="10sp"
+                    tools:text="1 Apr 19:00" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="-11dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/faint_grey"
+                    android:orientation="horizontal" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+app:layout_behavior="@string/appbar_scrolling_view_behavior"
+tools:context="zeemart.asia.buyers.companies.CompaniesListActivity">
+
+<RelativeLayout
+    android:id="@+id/lyt_manage_companies_header"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="@color/black"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/txt_manage_companies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:text="@string/more_menu_companies"/>
+
+    <ImageButton
+        android:id="@+id/btn_back_companies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@color/black"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp"
+        android:src="@drawable/white_arrow_left" />
+
+</RelativeLayout>
+<zeemart.asia.buyers.helper.customviews.CustomLoadingViewWhite
+    android:id="@+id/spin_kit_loader_add_promo_code_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    app:layout_constraintTop_toBottomOf="@+id/lyt_manage_companies_header"
+    android:elevation="2dp" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/lst_companies"
+    android:background="@color/faint_grey"
+    app:layout_constraintTop_toBottomOf="@+id/lyt_manage_companies_header"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

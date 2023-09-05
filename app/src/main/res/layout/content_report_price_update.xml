@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="zeemart.asia.buyers.reports.ReportPriceUpdateActivity"
+    tools:showIn="@layout/activity_report_price_update">
+
+    <RelativeLayout
+        android:id="@+id/report_total_spending_header"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@drawable/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/report_total_spending_header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/content_report_price_update_report_total_spending_header_text_text"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/txt_outlet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="The Fresh Grocer Pte. Ltd"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="@color/grey_medium"/>
+            <TextView
+                android:id="@+id/txt_pastmonth_price_updates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/format_current_date_to_past_90_days"
+                android:textSize="12sp"
+                android:textColor="@color/grey_medium"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/report_total_spending_bak_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:visibility="gone"
+            android:src="@drawable/white_arrow_left" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/export"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/report_total_spending_lyt_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/brown_black"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/report_total_spending_header">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/calendar_white" />
+
+        <TextView
+            android:id="@+id/report_total_spending_time_range_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="28 Dec 2017-3 Jan 2018" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/report_dashboard_week_lyt_price_changes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/faint_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_total_spending_lyt_calendar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/price_updates_lst_price_changes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/faint_grey" />
+
+        <ImageView
+            android:id="@+id/img_no_price_details"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/zm_graphic_no_chart_light_grey"
+            />
+
+        <TextView
+            android:id="@+id/txt_no_price_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_no_price_details"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey_medium"
+            android:text="@string/txt_no_price_changes_recently_past_90days"
+             />
+        <TextView
+            android:id="@+id/txt_no_price_details_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_no_price_details"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:textColor="@color/dark_grey_medium"
+            android:text="@string/txt_no_price_changes_recently_past_90days_no_data"
+            />
+
+        <TextView
+            android:id="@+id/txt_no_price_details_no_data_buyer_hub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp"
+            android:layout_below="@+id/txt_no_price_details_no_data"
+            android:layout_marginTop="2dp"
+            android:visibility="gone"
+            android:textColor="@color/dark_grey_medium"
+            android:text="@string/txt_no_price_changes_recently_past_Buyer_Hub"
+            />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

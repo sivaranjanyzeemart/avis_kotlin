@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/white"
+    android:paddingBottom="10dp">
+
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/txt_product_name"
+        android:background="@color/transparent"
+        android:contentDescription="@string/delete_product"
+        android:padding="10dp"
+        android:scaleType="center"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/greydelete" />
+    <TextView
+        android:id="@+id/txt_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:text="abc product" />
+    <TextView
+        android:id="@+id/txt_per_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_product_name"
+        android:layout_marginTop="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/grey_medium"
+        android:textSize="12sp"
+        tools:text="$4.00/kg" />
+    <TextView
+        android:id="@+id/txt_divider_grey"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txt_per_price"
+        android:layout_marginTop="8dp"
+        android:background="@color/faint_grey" />
+
+    <!--<ImageButton-->
+
+    <!--android:id="@+id/btn_inc_quantity"-->
+
+    <!--android:layout_width="wrap_content"-->
+
+    <!--android:layout_height="wrap_content"-->
+
+    <!--android:layout_alignEnd="@+id/btn_delete"-->
+
+    <!--android:layout_alignRight="@+id/btn_delete"-->
+
+    <!--android:layout_alignTop="@+id/txt_quantity_value"-->
+
+    <!--android:background="@color/transparent"-->
+
+    <!--android:contentDescription="@string/increase_price"-->
+
+    <!--android:padding="10dp"-->
+
+    <!--android:visibility="gone"-->
+
+    <!--app:srcCompat="@drawable/blueadd" />-->
+
+    <TextView
+        android:id="@+id/txt_price_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txt_divider_grey"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        tools:text="Product price"
+        />
+
+
+    <TextView
+        android:id="@+id/txt_quantity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_divider_grey"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/txt_unit_size_value"
+        android:gravity="right"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/txt_unit_size_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txt_divider_grey"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:inputType="textPersonName"
+        android:textColor="@color/dark_grey"
+        android:textSize="12sp"
+        tools:text="Name" />
+
+
+
+    <!--<TextView-->
+
+    <!--android:id="@+id/txt_reduce_quantity"-->
+
+    <!--android:layout_width="wrap_content"-->
+
+    <!--android:layout_height="wrap_content"-->
+
+    <!--android:layout_alignBaseline="@+id/txt_quantity_value"-->
+
+    <!--android:layout_below="@+id/txt_divider_grey"-->
+
+    <!--android:layout_toLeftOf="@+id/txt_quantity_value"-->
+
+    <!--android:layout_toStartOf="@+id/txt_quantity_value"-->
+
+    <!--android:paddingLeft="15dp"-->
+
+    <!--android:paddingRight="15dp"-->
+
+    <!--android:text="@string/reduce_price"-->
+
+    <!--android:textColor="@color/textblue"-->
+
+    <!--android:textSize="36sp"-->
+
+    <!--android:visibility="gone" />-->
+
+</RelativeLayout>

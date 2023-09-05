@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zeemart.asia.buyers.helper.imgpostprocessing.goodsReceivedNote.GrnDetailsActivity">
+
+    <zeemart.asia.buyers.helper.customviews.CustomLoadingViewWhite
+        android:id="@+id/lyt_loading_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="5dp"
+        android:visibility="gone"
+        app:loader_overlay_background="@color/translucent" />
+
+    <RelativeLayout
+        android:id="@+id/headerBg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/top_header">
+
+        <TextView
+            android:id="@+id/txt_invoice_details_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/txt_invoice_details"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <ImageButton
+            android:id="@+id/more_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:background="@color/transparent"
+            android:padding="16dp"
+            android:scaleType="center"
+            android:src="@drawable/whitedelete" />
+
+        <ImageButton
+            android:id="@+id/img_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txt_invoice_details_heading"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@color/transparent"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/white_arrow_left" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/headerBg"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black" />
+
+    <!--android:layout_marginTop="?android:actionBarSize"-->
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/review_orders_nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headerBg"
+        android:background="@color/transparent"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:id="@+id/lyt_scroll_review_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crd_supplier_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/grey_rounded_corner">
+
+                <RelativeLayout
+                    android:id="@+id/lyt_supplier_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/zebra_bg_rounded_corners">
+
+                    <ImageView
+                        android:id="@+id/img_supplier_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/placeholder_all" />
+
+                    <TextView
+                        android:id="@+id/txt_supplier_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_toEndOf="@+id/img_supplier_image"
+                        android:layout_toRightOf="@+id/img_supplier_image"
+                        android:gravity="left"
+                        android:orientation="vertical"
+                        android:text="@string/txt_supplier_name"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:id="@+id/lyt_invoice_number_invoice_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_supplier_name"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_toEndOf="@+id/img_supplier_image"
+                        android:layout_toRightOf="@+id/img_supplier_image"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_e_invoice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/e_invoice"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/txt_invoice_number_invoice_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="3dp"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="13sp"
+                            tools:text="COLAINVOICE-20-000000000055555 555550000000041" />
+
+                        <TextView
+                            android:id="@+id/txt_invoice_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="3dp"
+                            android:includeFontPadding="false"
+                            android:text="@string/txt_e_invoice"
+                            android:textColor="@color/color_orange"
+                            android:textSize="13sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/txt_dot_seperator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="3dp"
+                            android:text="@string/txt_dot_seperator"
+                            android:textColor="@color/dark_grey"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lyt_invoice_number_invoice_details"
+                        android:background="@color/white"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:id="@+id/lyt_invoice_detail_deliver_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/img_location_icon"
+                                android:layout_width="0dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/location" />
+
+                            <TextView
+                                android:id="@+id/txt_location_tag"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="3"
+                                android:includeFontPadding="false"
+                                android:text="@string/deliver_to"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txt_location_value"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="7"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="Cafe Blue (Toa Payoh)" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/divider_invoiceDate_deliverTo"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@id/lyt_invoice_detail_deliver_to"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@color/faint_grey" />
+
+                        <LinearLayout
+                            android:id="@+id/lyt_invoice_detail_linked_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/divider_invoiceDate_deliverTo"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/img_linked_to_icon"
+                                android:layout_width="0dp"
+                                android:layout_height="16dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/clip" />
+
+                            <TextView
+                                android:id="@+id/txt_linked_to_tag"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:includeFontPadding="false"
+                                android:text="@string/link_to"
+                                android:textSize="14sp" />
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/divider_invoiceDate_deliverTo"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="7">
+
+                                <TextView
+                                    android:id="@+id/txt_linked_to_order_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="7"
+                                    android:textColor="@color/text_blue"
+                                    android:textSize="16sp" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/divider_deliver_to_linked_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@id/lyt_invoice_detail_linked_to"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@color/faint_grey" />
+
+
+                        <LinearLayout
+                            android:id="@+id/lyt_payment_due_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/divider_deliver_to_linked_to"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dp"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/img_payment_due_date_icon"
+                                android:layout_width="0dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/createdby" />
+
+                            <TextView
+                                android:id="@+id/txt_payment_due_date_tag"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="3"
+                                android:includeFontPadding="false"
+                                android:text="@string/txt_receiver"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txt_payment_due_date_value"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="7"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                tools:text="27 Nov 2017" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crd_supplier_details_deliver_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crd_supplier_details"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:background="@drawable/grey_rounded_corner">
+
+                <LinearLayout
+                    android:id="@+id/delivery_issue_lyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/rec_pink_corner">
+
+                    <TextView
+                        android:id="@+id/txt_delivery_issues"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/txt_delivery_had_the_issue"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_reasons"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="gone"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lyt_linear_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_items_damaged_grn"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/pink_tick"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginStart="15dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_items_damaged_rejected_grn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_linear_wrong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_wrong_items_grn"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/pink_tick"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="15dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_wrong_items_grn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyt_linear_delivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_delivery_late_grn"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/pink_tick"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginStart="15dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_delivery_late_grn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="5dp"
+                            android:textSize="14sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txt_itemCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/crd_supplier_details_deliver_to"
+                android:layout_alignLeft="@id/crd_supplier_details"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:paddingLeft="5dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="3 items" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/txt_itemCount"
+                android:layout_marginBottom="5dp"
+                android:background="@color/faint_grey" />
+
+            <LinearLayout
+                android:id="@+id/lyt_email_to_supplier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/recyclerView"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/lyt_email_to_supplier_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:actionBarSize"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/txt_email_to_supplier_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/txt_problem_with_this"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lyt_notification_on_off"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/img_tick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="15dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:src="@drawable/icon_green_tick" />
+
+                    <TextView
+                        android:id="@+id/txt_email_this_supplier_switch_remains"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/img_tick"
+                        android:paddingStart="15dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/txt_notify_via_email"
+                        android:textColor="@color/color_azul_two"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="20dp"
+                        android:src="@drawable/arrow_right_blue" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/view_original_invoice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt_email_to_supplier"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/white"
+                android:padding="15dp"
+                android:text="@string/txt_download_pdf"
+                android:textColor="@color/text_blue"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lst_price_update_dashboard_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white"
+    android:paddingBottom="13dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="13dp">
+
+    <ImageView
+        android:id="@+id/dashboard_report_week_price_update_blue_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/arrow_right_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dashboard_report_week_price_update_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dashboard_report_week_price_update_item_unit_price"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sunpride bananas(pack of 100 bananans)" />
+
+    <TextView
+        android:id="@+id/dashboard_report_week_price_update_item_unit_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintRight_toLeftOf="@+id/dashboard_report_week_price_update_blue_arrow"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="$0.50/box" />
+
+
+    <TextView
+        android:id="@+id/dashboard_report_week_price_update_item_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingEnd="1dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dashboard_report_week_price_update_supplier_name"
+        app:layout_constraintTop_toBottomOf="@+id/dashboard_report_week_price_update_item_name"
+        tools:text="24 feb" />
+
+
+    <TextView
+        android:id="@+id/dashboard_report_week_price_update_supplier_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/grey_medium"
+        android:textSize="12sp"
+        android:paddingRight="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/dashboard_report_week_price_update_item_date"
+        app:layout_constraintTop_toBottomOf="@+id/dashboard_report_week_price_update_item_name"
+        tools:text="Parul Vegetable Shop" />
+
+    <TextView
+        android:id="@+id/dashboard_report_week_price_update_item_price_variation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/pinky_red"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dashboard_report_week_price_update_blue_arrow"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dashboard_report_week_price_update_item_unit_price"
+        tools:text="+$0.50(10%)" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

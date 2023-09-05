@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zeemart.asia.buyers.deals.ReviewDealsActivity">
+
+    <zeemart.asia.buyers.helper.customviews.CustomLoadingViewWhite
+        android:id="@+id/spin_kit_loader_review_order_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:elevation="2dp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_review_order_deals_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_new_order"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btn_deal_order_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@id/txt_review_order_deals_heading"
+            android:layout_marginLeft="5dp"
+            android:background="@color/transparent"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/white_arrow_left" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/review_orders_nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="45dp"
+        android:background="@color/transparent"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/lyt_place_order_deals"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/lyt_scroll_review_order_essentials"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crd_supplier_details_deal_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/grey_rounded_corner">
+
+                <RelativeLayout
+                    android:id="@+id/lyt_supplier_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/zebra_bg_rounded_corners">
+
+                    <ImageView
+                        android:id="@+id/img_supplierImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/placeholder_all" />
+                    <RelativeLayout
+                        android:id="@+id/lyt_supplier_thumbnail"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txt_supplier_thumbnail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:maxLength="2"
+                            android:text="AS"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txt_supplier_name_review_order_deals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginStart="15dp"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="15dp"
+                        android:layout_toRightOf="@+id/img_supplierImage"
+                        android:layout_marginLeft="15dp"
+                        tools:text="@string/content_review_order_txt_supplier_name_review_order_text"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_supplierImage"
+                        android:background="@color/white"
+                        android:paddingBottom="15dp">
+
+                        <ImageView
+                            android:id="@+id/img_status_icon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+                            app:srcCompat="@drawable/tick_circle_mini" />
+
+                        <TextView
+                            android:id="@+id/txt_status_deal_order_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/img_status_icon"
+                            android:layout_marginLeft="9dp"
+                            android:layout_marginStart="9dp"
+                            android:layout_toEndOf="@+id/img_status_icon"
+                            android:layout_toRightOf="@+id/img_status_icon"
+                            android:includeFontPadding="false"
+                            android:text="@string/status"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_status_deal_order_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/txt_status_deal_order_tag"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_toEndOf="@+id/txt_location_tag"
+                            android:layout_toRightOf="@+id/txt_location_tag"
+                            android:background="@drawable/btn_rounded_blue"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textAllCaps="true"
+                            android:paddingTop="5dp"
+                            tools:text="TextView"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/divider_amount_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignLeft="@id/img_status_icon"
+                            android:layout_below="@id/txt_status_deal_order_value"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/faint_grey" />
+
+                        <ImageView
+                            android:id="@+id/img_location_icon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignLeft="@id/img_status_icon"
+                            android:layout_below="@id/divider_amount_status"
+                            app:srcCompat="@drawable/location" />
+
+                        <TextView
+                            android:id="@+id/txt_location_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/txt_status_deal_order_tag"
+                            android:layout_alignTop="@+id/img_location_icon"
+                            android:includeFontPadding="false"
+                            android:text="@string/deliver_to"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_location_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/txt_location_tag"
+                            android:layout_alignBottom="@+id/txt_location_tag"
+                            android:layout_alignLeft="@id/txt_status_deal_order_value"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="16sp"
+                            tools:text="Cafe Blue (Toa Payoh)" />
+
+                        <TextView
+                            android:id="@+id/divider_invoiceDate_deliverTo"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignLeft="@id/img_status_icon"
+                            android:layout_below="@id/txt_location_value"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/faint_grey" />
+
+                        <ImageView
+                            android:id="@+id/img_linked_to_icon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignLeft="@id/img_location_icon"
+                            android:layout_below="@id/divider_invoiceDate_deliverTo"
+                            app:srcCompat="@drawable/calendar" />
+
+                        <TextView
+                            android:id="@+id/txt_delivery_date_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/txt_location_tag"
+                            android:layout_alignTop="@+id/img_linked_to_icon"
+                            android:includeFontPadding="false"
+                            android:text="@string/deliver_on"
+                            android:textSize="14sp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/txt_location_value"
+                            android:layout_below="@id/divider_invoiceDate_deliverTo">
+
+                            <ImageView
+                                android:id="@+id/img_delivery_date_alert"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginRight="5dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/warning_yellow" />
+
+                            <TextView
+                                android:id="@+id/txt_delivery_date_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-1dp"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/text_blue"
+                                android:textSize="16sp"
+                                tools:text="Saturday, 27 Nov 2017" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txt_item_count"
+                android:layout_width="match_parent"
+                android:background="@color/faint_grey"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/crd_supplier_details_deal_order"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="3 items" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_deal_order_products"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/txt_item_count"
+                android:background="@color/faint_grey" />
+
+            <TextView
+                android:id="@+id/txt_add_items_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/faint_grey"
+                android:layout_below="@id/lst_deal_order_products"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/txt_add_items"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="Add items" />
+
+            <LinearLayout
+                android:id="@+id/lyt_add_more_skus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_add_items_heading"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+
+                <ImageButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/transparent"
+                    android:scaleType="center"
+                    android:src="@drawable/blueadd" />
+
+                <TextView
+                    android:id="@+id/txt_select_from_catalogue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/add_more_skus_to_this_order"
+                    android:textColor="@color/text_blue"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_delivery_instructions_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyt_add_more_skus"
+                android:background="@color/faint_grey"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="15dp"
+                android:text="@string/txt_delivery_or_billing_instruction"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+            <RelativeLayout
+                android:id="@+id/lyt_add_delivery_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="15dp"
+                android:layout_below="@+id/txt_delivery_instructions_heading"
+                android:background="@color/white"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/text_blue"
+                    android:text="@string/txt_add_instructions"
+                    android:id="@+id/txt_delivery_instruction"
+                    android:textSize="16sp"
+                    android:layout_toLeftOf="@+id/btn_delivery_instruction_remove"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/grey_small_cross"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="20dp"
+                    android:id="@+id/btn_delivery_instruction_remove"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/txt_notes_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyt_add_delivery_instructions"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/txt_add_special_request"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edt_notes_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_notes_tag"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="@string/txt_notes_hint"
+                android:paddingBottom="40dp"
+                android:paddingLeft="20dp"
+                android:maxLength="150"
+                android:textSize="16sp"
+                android:paddingTop="10dp" />
+
+            <androidx.legacy.widget.Space
+                android:id="@+id/space"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_below="@id/edt_notes_value" />
+            <RelativeLayout
+                android:id="@+id/lyt_add_on_order"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/space"
+                android:background="@color/faint_yellow">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/info_blue" />
+
+                    <TextView
+                        android:id="@+id/txt_add_on_order_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:text="@string/txt_this_is" />
+
+                    <TextView
+                        android:id="@+id/txt_add_on_order_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:text="@string/txt_add_on_order" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/txt_whats_add_on_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_blue"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:paddingEnd="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/txt_whats_add_on_order" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/lyt_order_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyt_add_on_order"
+                android:background="@color/white"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp">
+                <TextView
+                    android:id="@+id/txt_estimated_total_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="@string/txt_subtotal"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_estimated_subtotal_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="16sp"
+                    tools:text="$125.00" />
+                <TextView
+                    android:id="@+id/txt_txt_delivery_fee_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_estimated_total_tag"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:visibility="gone"
+                    tools:text="Delivery fee for order below $200.00"
+                    android:textColor="@color/pinky_red"
+                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/txt_delivery_fee_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/txt_txt_delivery_fee_tag"
+                    android:layout_below="@id/txt_estimated_subtotal_value"
+                    android:paddingRight="20dp"
+                    android:visibility="gone"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="14sp"
+                    tools:text="$0.00" />
+
+                <RelativeLayout
+                    android:id="@+id/lyt_promo_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_txt_delivery_fee_tag"
+                    android:background="@color/white"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/img_vocher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/voucher_grey" />
+
+                    <TextView
+                        android:id="@+id/txt_promo_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/img_vocher"
+                        android:text="@string/txt_use_promo_code"
+                        android:textColor="@color/text_blue"
+                        android:textSize="14sp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_remove_promo_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/txt_promo_code"
+                        android:background="@color/white"
+                        android:padding="8dp"
+                        android:src="@drawable/grey_small_cross" />
+
+                    <TextView
+                        android:id="@+id/txt_promo_code_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        tools:text="-$5.00" />
+
+                    <LinearLayout
+                        android:id="@+id/lyt_promo_order_changed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_vocher"
+                        android:layout_alignLeft="@+id/img_vocher"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/img_exclaimation_small" />
+
+                        <TextView
+                            android:id="@+id/txt_promo_order_changed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="@string/txt_your_order_has_changed"
+                            android:textColor="@color/pinky_red"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_please_reapply_promo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="@string/txt_please_reapply_promo_code"
+                            android:textColor="@color/pinky_red"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/txt_gst_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyt_promo_code"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="20dp"
+                    tools:text="GST"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_gst_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lyt_promo_code"
+                    android:layout_alignTop="@id/txt_gst_tag"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="16sp"
+                    tools:text="$8.00" />
+
+                <ImageButton
+                    android:id="@+id/img_warning"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:visibility="gone"
+                    android:layout_toStartOf="@+id/txt_estimated_subtotal_value"
+                    android:layout_marginEnd="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/transparent"
+                    android:src="@drawable/img_red_warning"
+                    android:layout_toLeftOf="@+id/txt_estimated_subtotal_value"
+                    android:layout_marginRight="5dp" />
+
+                <TextView
+                    android:id="@+id/txt_divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/txt_gst_tag"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/faint_grey" />
+
+
+                <TextView
+                    android:id="@+id/txt_estimated_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_total"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/txt_divider3"
+                    android:paddingLeft="20dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_estimated_total_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/txt_estimated_total"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="$153.75" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyt_below_mov_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyt_order_total"
+                android:background="@color/notif_yellow"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/lyt_error_mov"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageButton
+                        android:id="@+id/img_error_mov_deals"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@color/transparent"
+                        android:src="@drawable/img_red_warning" />
+
+                    <TextView
+                        android:id="@+id/txt_supplier_requires_mov"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/pinky_red"
+                        android:text="@string/txt_minimum_order_deals"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_error_msg_below_mov"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lyt_error_mov"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="@string/deals_below_mov_message"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/lyt_place_order_deals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/chart_blue"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/txt_place_order_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/txt_continue"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/lyt_delivery_instruction_options"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/translucent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/txt_delivery_billing_instruction_list_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@string/txt_delivery_billing_instruction"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/faint_grey"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lst_delivery_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

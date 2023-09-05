@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#ff4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="clear">#00000000</color>
+
+    <color name="cerulean">#0075be</color>
+    <color name="green">#03b02b</color>
+    <color name="light_green">#deffe6</color>
+    <color name="pinky_red">#ff1848</color>
+    <color name="light_pinky_red">#66ff1848</color>
+    <color name="squash">#f2b90c</color>
+
+    <color name="chart_blue">#2078dc</color>
+    <color name="chart_light_blue">#57b8ff</color>
+    <color name="chart_green">#3ddc97</color>
+    <color name="chart_yellow">#fbb13c</color>
+    <color name="chart_light_yellow">#fadd1c</color>
+    <color name="yellow">#f2b90c</color>
+    <color name="chart_orange">#fe6847</color>
+    <color name="chart_red">#ff1848</color>
+    <color name="company_yellow">#ffcd00</color>
+
+    <color name="dark_grey">#757575</color>
+    <color name="faint_grey">#f4f4f4</color>
+    <color name="key_line_grey">#e3e3e3</color>
+    <color name="key_line_light_grey">#F4F4F4</color>
+    <color name="key_line_light_blue">#E7EEFA</color>
+    <color name="grey_light">#fcfcfc</color>
+    <color name="icon_grey">#cdcdcd</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="text_blue">#2078dc</color>
+    <color name="text_blue_dark">#007aff</color>
+    <color name="notif_yellow">#fcf1ce</color>
+    <color name="grey_solid">#e3e3e3</color>
+    <color name="translucent">#C0000000</color>
+    <color name="translucent_white">#73f4f4f4</color>
+    <color name="opacity30">#4dffffff</color>
+    <color name="opacity25">#40ffffff</color>
+    <color name="opacity50">#80ffffff</color>
+    <color name="grey_medium">#9b9b9b</color>
+    <color name="dark_grey_medium">#757575</color>
+    <color name="faint_black">#4a4a4a</color>
+    <color name="faint_white">#fafafa</color>
+    <color name="faint_yellow">#fcf1ce</color>
+    <color name="header_yellow">#1af2b90c</color>
+    <color name="divider_grey">#404d4d4d</color>
+    <color name="brown_black">#333333</color>
+    <color name="orange">#FE6847</color>
+
+    //custom colors for the multiple image selection gallery
+    <color name="multiple_image_select_primary">#000000</color>
+    <color name="multiple_image_select_primaryDark">#000000</color>
+    <color name="multiple_image_select_primaryLight">#D1C4E9</color>
+    <color name="multiple_image_select_accent">#536DFE</color>
+    <color name="multiple_image_select_primaryText">#212121</color>
+    <color name="multiple_image_select_secondaryText">#727272</color>
+    <color name="multiple_image_select_divider">#B6B6B6</color>
+    <color name="multiple_image_select_toolbarPrimaryText">#FFFFFF</color>
+    <color name="multiple_image_select_albumTextBackground">#99FFFFFF</color>
+    <color name="multiple_image_select_imageSelectBackground">#000000</color>
+    <color name="black_opaque_10_perc">#1A000000</color>
+    <color name="black_opaque_40_perc">#66000000</color>
+    <color name="color_orange_popup_menu">#ff3b30</color>
+    <color name="color_azul_two">#115ece</color>
+    <color name="blue_opacity_30">#4d115ece</color>
+    <color name="color_orange">#ff5f00</color>
+    <color name="polygonViewCircleStrokeColor">#ff59a9ff</color>
+    <color name="polygonViewCircleBackground">#90e5f8ff</color>
+    <color name="orange_splash_Screen">#f7a453</color>
+    <color name="light_green_splash_screen">#f8fdff</color>
+    <color name="orange_background">#fff9de</color>
+    <color name="faint_bg_grey">#f9f9f9</color>
+    <color name="light_blue">#e7eefa</color>
+    <color name="light_grey">#d3d3d3</color>
+    <declare-styleable name="overlay_view">
+        <attr name="loader_overlay_background" format="color" />
+    </declare-styleable>
+
+    <color name="label_background_color_a_d">#FFEDED</color>
+    <color name="label_background_color_e_h">#DAFAF1</color>
+    <color name="label_background_color_i_l">#D7F0FE</color>
+    <color name="label_background_color_m_p">#FCF0D2</color>
+    <color name="label_background_color_q_t">#E6E3FF</color>
+    <color name="label_background_color_u_x">#DAFADA</color>
+    <color name="label_background_color_y_z">#FFECE0</color>
+    <color name="label_background_color">#F4E6E0</color>
+
+    <color name="label_text_color_a_d">#FF4A4A</color>
+    <color name="label_text_color_e_h">#02D89B</color>
+    <color name="label_text_color_i_l">#24A0E5</color>
+    <color name="label_text_color_m_p">#FFAD32</color>
+    <color name="label_text_color_q_t">#8878FF</color>
+    <color name="label_text_color_u_x">#58D058</color>
+    <color name="label_text_color_y_z">#FF8132</color>
+    <color name="label_text_color">#C78162</color>
+</resources>

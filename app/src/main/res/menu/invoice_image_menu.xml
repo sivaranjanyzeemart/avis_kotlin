@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_view_order"
+        android:title="@string/txt_view_related_order" />
+    <item
+        android:id="@+id/item_delete"
+        android:title="@string/txt_delete" />
+    <item
+        android:id="@+id/item_download"
+        android:title="@string/txt_download" />
+    <item
+        android:id="@+id/item_share"
+        android:title="@string/txt_share" />
+</menu>

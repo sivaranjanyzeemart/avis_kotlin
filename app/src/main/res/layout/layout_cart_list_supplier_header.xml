@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:paddingRight="20dp">
+
+    <ImageView
+        android:id="@+id/marker_red_order_not_allow_supplier"
+        android:layout_width="5dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view_divider_supplier"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/pinky_red"
+        android:paddingTop="17dp" />
+
+    <CheckBox
+        android:id="@+id/check_box_select_draft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="17dp" />
+
+    <TextView
+        android:id="@+id/txt_supplier_name_draft_list_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_toLeftOf="@+id/img_supplier_image_draft_order"
+        android:layout_toRightOf="@+id/check_box_select_draft"
+        android:ellipsize="end"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="ABC Pte. Ltd. " />
+
+    <LinearLayout
+        android:id="@+id/lyt_warning_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_supplier_name_draft_list_row"
+        android:layout_alignLeft="@+id/txt_supplier_name_draft_list_row"
+        android:layout_marginTop="2dp">
+
+        <ImageView
+            android:id="@+id/img_warning_draft_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/warning_yellow_black"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_draft_order_items_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_medium"
+            android:textSize="12sp"
+            tools:text="3 items $650.00" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_error_below_mov_draft_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_warning_total_price"
+        android:layout_alignLeft="@+id/lyt_warning_total_price"
+        android:layout_marginTop="2dp"
+        android:layout_toLeftOf="@+id/img_supplier_image_draft_order"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_error_below_mov_draft_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/warning_yellow_black" />
+
+        <TextView
+            android:id="@+id/txt_error_below_mov_message_draft_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/squash"
+            android:textSize="12sp"
+            tools:text="@string/txt_below_minimum_order" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_error_draft_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_error_below_mov_draft_order"
+        android:layout_alignLeft="@+id/lyt_error_below_mov_draft_order"
+        android:layout_marginTop="2dp"
+        android:layout_toLeftOf="@+id/img_supplier_image_draft_order"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_error_draft_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/warning_red" />
+
+        <TextView
+            android:id="@+id/txt_error_message_draft_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pinky_red"
+            android:textSize="12sp"
+            tools:text="@string/txt_order_cannot_be_placed" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_supplier_image_draft_order"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:id="@+id/lyt_supplier_thumbnail"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_supplier_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLength="2"
+            android:text="AS"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_divider_supplier"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/lyt_error_draft_order"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/faint_grey" />
+
+</RelativeLayout>

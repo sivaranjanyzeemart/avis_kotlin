@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translucent">
+
+    <LinearLayout
+        android:id="@+id/lyt_payment_invoices_date_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/faint_grey"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/lyt_calendar_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/txt_calendar_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/txt_default"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/img_date_selected_default"
+                android:layout_width="17sp"
+                android:layout_height="17sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/txt_calendar_default"
+                android:gravity="left"
+                android:src="@drawable/bluetick"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_calendar_date_range_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:textColor="@color/grey_medium"
+                android:textSize="16sp"
+                tools:text="28 Dec - 3 Jan" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lyt_calendar_over_due"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/txt_calendar_over_due"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/txt_over_due"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/img_date_selected_over_due"
+                android:layout_width="17sp"
+                android:layout_height="17sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/txt_calendar_over_due"
+                android:gravity="left"
+                android:src="@drawable/bluetick"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_calendar_date_range_over_due"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:textColor="@color/grey_medium"
+                android:textSize="16sp"
+                tools:text="28 Dec - 3 Jan" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lyt_calendar_due_with_in_7days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/txt_calendar_due_with_in_7days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/txt_due_with"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/img_date_selected_due_with_in_7days"
+                android:layout_width="17sp"
+                android:layout_height="17sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/txt_calendar_due_with_in_7days"
+                android:gravity="left"
+                android:src="@drawable/bluetick"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_calendar_date_range_due_with_in_7days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:textColor="@color/grey_medium"
+                android:textSize="16sp"
+                tools:text="28 Dec - 3 Jan" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lyt_calendar_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/txt_calendar_custom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/txt_custom"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/img_date_selected_custom"
+                android:layout_width="17sp"
+                android:layout_height="17sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/txt_calendar_custom"
+                android:gravity="left"
+                android:src="@drawable/bluetick"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

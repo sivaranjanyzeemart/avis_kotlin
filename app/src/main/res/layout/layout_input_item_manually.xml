@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/white_round_corner"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/txt_heading_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="@string/txt_item_name"/>
+
+    <zeemart.asia.buyers.helper.customviews.NoChangingBackgroundTextInputLayout
+        android:id="@+id/input_layout_txt_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_heading_item_name"
+        app:errorEnabled="true"
+        app:hintEnabled="false"
+        app:errorTextAppearance="@style/ErrorText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:padding="12dp"
+            android:gravity="left"
+            tools:text="item name"
+            android:background="@drawable/grey_rounded_corner"/>
+    </zeemart.asia.buyers.helper.customviews.NoChangingBackgroundTextInputLayout>
+
+    <TextView
+        android:id="@+id/txt_heading_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@id/input_layout_txt_item_name"
+        android:textColor="@color/black"
+        android:text="@string/txt_quantity"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_heading_quantity"
+        android:orientation="horizontal">
+        <zeemart.asia.buyers.helper.customviews.NoChangingBackgroundTextInputLayout
+            android:id="@+id/input_layout_txt_item_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:errorTextAppearance="@style/ErrorText"
+            app:errorEnabled="true"
+            android:layout_weight="1"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_item_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:padding="12dp"
+                android:gravity="left"
+                android:hint="eg. 2 pcs"
+                android:background="@drawable/grey_rounded_corner"/>
+        </zeemart.asia.buyers.helper.customviews.NoChangingBackgroundTextInputLayout>
+        <TextView
+            android:id="@+id/txt_done_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:background="@drawable/blue_rounded_corner"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:text="Done"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

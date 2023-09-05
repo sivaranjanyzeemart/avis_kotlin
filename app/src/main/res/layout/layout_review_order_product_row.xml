@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/problematic_product_indicator"
+        android:layout_width="5dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lyt_bottom_notes_quantity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/pinky_red" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/txt_product_name"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_marginLeft="20dp"-->
+    <!--android:layout_marginStart="20dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_toLeftOf="@id/btn_delete"-->
+    <!--android:includeFontPadding="false"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--tools:text="abc product sfdsfafadsfasfasfewrwrfsadfasfdafgsgsgfdsdsfadsfafdsfadfdafas" />-->
+
+    <LinearLayout
+        android:id="@+id/lyt_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toLeftOf="@+id/btn_delete"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/txt_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="Popiah Wrapper - Lee Hup(pk of 200 pcs)" />
+        <TextView
+            android:id="@+id/txt_item_custom_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_medium"
+            android:layout_marginTop="2dp"
+            android:textSize="12sp"
+            tools:text="Popiah Wrapper - Lee Hup(pk of 200 pcs)" />
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/lyt_product_name"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/delete_product"
+        android:padding="10dp"
+        android:scaleType="center"
+        app:srcCompat="@drawable/trash_grey" />
+    <RelativeLayout
+        android:id="@+id/lyt_unit_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_product_name"
+        >
+
+        <TextView
+            android:id="@+id/txt_per_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            tools:text="$4.00/kg" />
+
+        <TextView
+            android:id="@+id/txt_price_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txt_per_price"
+            android:layout_toEndOf="@+id/txt_per_price"
+            android:layout_toRightOf="@+id/txt_per_price"
+            android:includeFontPadding="false"
+            android:textColor="@color/grey_medium"
+            android:textSize="12sp"
+            tools:text=" • Product price" />
+        <LinearLayout
+            android:id="@+id/lyt_stock_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_warning"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/warning_order" />
+
+            <TextView
+                android:id="@+id/txt_stock_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/layout_review_order_product_row_txt_stock_message_text"
+                android:textColor="@color/pinky_red"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/txt_divider_grey"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/lyt_unit_price"
+        android:layout_marginTop="8dp"
+        android:background="@color/faint_grey" />
+
+    <RelativeLayout
+        android:id="@+id/lyt_bottom_notes_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_divider_grey"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageButton
+            android:id="@+id/btn_inc_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:contentDescription="@string/increase_price"
+            android:padding="10dp"
+            app:srcCompat="@drawable/blueadd" />
+
+        <TextView
+            android:id="@+id/txt_quantity_value"
+            android:layout_width="90dp"
+            android:layout_height="33dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/btn_inc_quantity"
+            android:background="@color/faint_grey"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="Name" />
+
+        <ImageButton
+            android:id="@+id/btn_reduce_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/txt_quantity_value"
+            android:background="@color/transparent"
+            android:contentDescription="@string/increase_price"
+            android:padding="10dp"
+            app:srcCompat="@drawable/blueminus" />
+
+        <TextView
+            android:id="@+id/txt_moq_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/txt_quantity_value"
+            android:text="@string/layout_review_order_product_row_txt_moq_text_text"
+            android:textColor="@color/grey_medium"
+            android:textSize="14sp"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/img_add_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/transparent"
+            app:srcCompat="@drawable/notesgrey" />
+
+        <TextView
+            android:id="@+id/txt_add_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txt_quantity_value"
+            android:layout_alignBottom="@+id/img_add_notes"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_toEndOf="@+id/img_add_notes"
+            android:layout_toRightOf="@+id/img_add_notes"
+            android:text="@string/layout_review_order_product_row_txt_add_notes_text"
+            android:textColor="@color/grey_medium"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

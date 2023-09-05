@@ -1,0 +1,202 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.getkeepsafe.dexcount'
+apply plugin: 'checkstyle'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 33
+    //buildToolsVersion "30.0.0"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "zeemart.asia.buyers"
+        minSdkVersion 21
+
+        targetSdkVersion 33
+
+        versionName "2.80"
+        versionCode 115
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        devDebug {
+            applicationIdSuffix ".dev"
+            manifestPlaceholders = [
+                    appIcon        : "@mipmap/ic_launcher_dev",
+                    appIconRound   : "@mipmap/ic_launcher_round_dev",
+                    hostNameAppLink: "buyer.zeemart.asia"
+            ]
+            signingConfig signingConfigs.debug
+            debuggable = true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        prodDebug {
+            manifestPlaceholders = [
+                    appIcon        : "@mipmap/ic_launcher",
+                    appIconRound   : "@mipmap/ic_launcher_round",
+                    hostNameAppLink: "buyer.zeemart.asia"
+            ]
+            signingConfig signingConfigs.debug
+            debuggable = true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        devRelease {
+            applicationIdSuffix ".dev"
+            manifestPlaceholders = [
+                    appIcon        : "@mipmap/ic_launcher_dev",
+                    appIconRound   : "@mipmap/ic_launcher_round_dev",
+                    hostNameAppLink: "buyer.zeemart.asia"
+            ]
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        prodRelease {
+            manifestPlaceholders = [
+                    appIcon        : "@mipmap/ic_launcher",
+                    appIconRound   : "@mipmap/ic_launcher_round",
+                    hostNameAppLink: "buyer.zeemart.asia"
+            ]
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    android.variantFilter { variant ->
+        if (variant.buildType.name.equals('debug') || variant.buildType.name.equals('release')) {
+            variant.setIgnore(true)
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def version = variant.versionName
+            def code = variant.versionCode
+            //def flavor = variant.productFlavors[0].name
+            def buildType = variant.buildType.name
+            if (buildType.contains('dev'))
+                buildType = 'dev'
+            else
+                buildType = 'prod'
+
+            def newApkName = "zm_" + buildType + "_" + version + "_" + code + ".apk"
+            outputFileName = new File(newApkName)
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+task checkstyle(type: Checkstyle) {
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+    // Where my checkstyle config is...
+    source 'src/main/java'
+    include '**/*.java'
+    exclude '**/gen/**'
+    classpath = files()
+    //Failing the build
+    ignoreFailures = true
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // Declare the dependency for the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    implementation 'com.google.firebase:firebase-core:20.0.0'
+    implementation 'com.google.firebase:firebase-config:21.0.1'
+    implementation 'com.google.code.gson:gson:2.8.8'
+    // Add the Firebase Crashlytics SDK.
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.5'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.exifinterface:exifinterface:1.3.3'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.aurelhubert:ahbottomnavigation:2.3.4'
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+    implementation 'jp.wasabeef:picasso-transformations:2.2.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.borax12.materialdaterangepicker:library:1.9'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.commit451:PhotoView:1.2.4'
+    implementation 'com.isseiaoki:simplecropview:1.0.13'
+    implementation 'com.yongchun:com.yongchun.imageselector:1.1.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.5.1'
+    implementation 'io.intercom.android:intercom-sdk-base:14.0.0'
+    implementation 'io.intercom.android:intercom-sdk-fcm:14.0.0'
+    implementation files('libs/opencv-1.0.aar')
+    implementation 'com.google.android.gms:play-services-base:18.0.1'
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.stripe:stripe-android:15.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.5.0'
+    implementation 'com.github.iammert:MaterialIntroView:1.6.0'
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+    implementation 'com.r0adkll:slidableactivity:2.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'com.android.support:appcompat-v7:28.0.0'
+//    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'io.appium:java-client:7.3.0'
+    testImplementation 'org.testng:testng:6.9.10'
+    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'com.mixpanel.android:mixpanel-android:5.9.6'
+    implementation 'com.onesignal:OneSignal:4.6.3'
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.0'
+    implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+
+}
+configurations.all {
+    resolutionStrategy {
+        force "'com.google.firebase:firebase-analytics:17.1.0'"
+    }
+}
+apply plugin: 'android-string-extractor'
+apply plugin: 'com.google.gms.google-services'
+
+project.afterEvaluate {
+    preBuild.dependsOn('checkstyle')
+    assemble.dependsOn('lint')
+    check.dependsOn('checkstyle')
+}
+
+repositories {
+    mavenCentral()
+}

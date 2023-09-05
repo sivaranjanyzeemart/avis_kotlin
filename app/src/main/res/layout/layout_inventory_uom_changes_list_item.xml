@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:background="@color/white"
+    android:paddingLeft="15dp"
+    android:paddingTop="5dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="5dp">
+
+
+    <LinearLayout
+        android:id="@+id/lyt_product_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lyt_inventory_product_quantity_detail"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="7"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/inventory_product_txt_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="Sunshine valley Valencia Oranges Sunbury Orchards(Premium)" />
+
+        <TextView
+            android:id="@+id/inventory_product_txt_supplier_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_medium"
+            android:textSize="11sp"
+            tools:text="Parul Vegetable Shop" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_inventory_product_quantity_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="start"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintStart_toEndOf="@+id/lyt_product_detail"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/inventory_product_txt_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingRight="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="1234.5" />
+
+        <TextView
+            android:id="@+id/inventory_product_txt_uom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            tools:text="1pk==12pcs" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

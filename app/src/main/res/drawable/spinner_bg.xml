@@ -1,0 +1,14 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="rectangle"/>
+    </item>
+    <item
+        android:width="12dp"
+        android:height="12dp"
+        android:top="15dp"
+        android:gravity="right|center">
+        <bitmap
+            android:src="@drawable/arrow_blue_small_down"
+            android:tint="@color/text_blue"/>
+    </item></layer-list>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="zeemart.asia.buyers.orders.OrderProcessingPlacedActivity"
+    tools:showIn="@layout/activity_order_processing">
+
+    <RelativeLayout
+        android:id="@+id/orderProcessingBlackHeader"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/orderDetailOrderDataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="?actionBarSize"
+        android:background="@drawable/grey_rounded_corner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/orderDetail_lyt_supplier_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/zebra_bg_rounded_corners">
+
+            <TextView
+                android:id="@+id/orderProcessing_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="55dp"
+                android:textColor="@color/black"
+                android:textSize="21dp"
+                tools:text="Order approved" />
+
+            <TextView
+                android:id="@+id/orderProcessing_txt_orderno_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orderProcessing_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_blue"
+                android:textSize="13sp"
+                tools:text="#121321432.25 Nov 2017" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/orderProcessing_txt_orderno_date"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/orderProcessing_img_status_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/tick_circle_mini" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_status_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/orderProcessing_img_status_icon"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_toEndOf="@+id/orderProcessing_img_status_icon"
+                    android:layout_toRightOf="@+id/orderProcessing_img_status_icon"
+                    android:includeFontPadding="false"
+                    android:text="@string/status"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_status_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/orderProcessing_txt_status_tag"
+                    android:layout_alignBottom="@+id/orderProcessing_txt_status_tag"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_toEndOf="@+id/orderProcessing_txt_supplier_tag"
+                    android:layout_toRightOf="@+id/orderProcessing_txt_supplier_tag"
+                    android:background="@drawable/btn_rounded_grey"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/txt_processing_lower_case"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_divider_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignLeft="@id/orderProcessing_img_status_icon"
+                    android:layout_below="@id/orderProcessing_txt_status_value"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/faint_grey" />
+                <ImageView
+                    android:id="@+id/orderProcessing_img_supplier_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignLeft="@id/orderProcessing_img_status_icon"
+                    android:layout_below="@id/orderProcessing_divider_one"
+                    app:srcCompat="@drawable/approversmall" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_supplier_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/orderProcessing_txt_status_tag"
+                    android:layout_alignTop="@+id/orderProcessing_img_supplier_icon"
+                    android:includeFontPadding="false"
+                    android:text="@string/txt_supplier"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_supplier_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/orderProcessing_txt_supplier_tag"
+                    android:layout_alignBottom="@+id/orderProcessing_txt_supplier_tag"
+                    android:layout_alignLeft="@id/orderProcessing_txt_status_value"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:text="GMP packing pte ltd" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_divider_five"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignLeft="@id/orderProcessing_img_status_icon"
+                    android:layout_below="@id/orderProcessing_txt_supplier_value"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/faint_grey" />
+                <ImageView
+                    android:id="@+id/orderProcessing_img_location_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignLeft="@id/orderProcessing_img_supplier_icon"
+                    android:layout_below="@id/orderProcessing_divider_five"
+                    app:srcCompat="@drawable/location" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_location_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/orderProcessing_txt_supplier_tag"
+                    android:layout_alignTop="@+id/orderProcessing_img_location_icon"
+                    android:includeFontPadding="false"
+                    android:text="@string/deliver_to"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_location_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/orderProcessing_txt_location_tag"
+                    android:layout_alignBottom="@+id/orderProcessing_txt_location_tag"
+                    android:layout_alignLeft="@id/orderProcessing_txt_supplier_value"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:text="Cafe Blue (Toa Payoh)" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_divider_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignLeft="@id/orderProcessing_img_supplier_icon"
+                    android:layout_below="@id/orderProcessing_txt_location_value"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/faint_grey" />
+
+                <ImageView
+                    android:id="@+id/orderProcessing_img_date_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignLeft="@id/orderProcessing_img_location_icon"
+                    android:layout_below="@id/orderProcessing_divider_two"
+                    app:srcCompat="@drawable/truck_grey" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_calendar_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/orderProcessing_txt_location_tag"
+                    android:layout_alignTop="@+id/orderProcessing_img_date_icon"
+                    android:includeFontPadding="false"
+                    android:text="@string/deliver_on"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_calendar_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/orderProcessing_txt_calendar_tag"
+                    android:layout_alignBottom="@+id/orderProcessing_txt_calendar_tag"
+                    android:layout_alignLeft="@id/orderProcessing_txt_location_value"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="15dp"
+                    tools:text="Saturday, 27 Nov 2017" />
+
+                <ImageView
+                    android:id="@+id/orderProcessing_img_created_by"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="gone"
+                    android:layout_alignLeft="@id/orderProcessing_img_date_icon"
+                    app:srcCompat="@drawable/createdby" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_created_by_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_alignLeft="@id/orderProcessing_txt_calendar_tag"
+                    android:layout_alignTop="@+id/orderProcessing_img_created_by"
+                    android:includeFontPadding="false"
+                    android:text="@string/txt_created_by"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/orderProcessing_txt_created_by_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_alignBaseline="@+id/orderProcessing_txt_created_by_tag"
+                    android:layout_alignBottom="@+id/orderProcessing_txt_created_by_tag"
+                    android:layout_alignLeft="@id/orderProcessing_txt_calendar_value"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:text="James Tan" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:elevation="2dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/image_processing_order" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_processing_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/content_order_processing_textView3_text"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderDetailOrderDataLayout" />
+
+    <TextView
+        android:id="@+id/txt_update_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="@string/txt_processing_detail"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_processing_order" />
+
+    <Button
+        android:id="@+id/orderProcessing_btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/blue_rounded_corner"
+        android:text="@string/txt_done"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

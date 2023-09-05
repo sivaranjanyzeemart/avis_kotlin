@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/blue_rounded_corner"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_review_order_button">
+
+    <!--<TextView
+        android:id="@+id/txt_no_of_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        tools:text="9 items"
+        android:textSize="12dp"
+        android:textColor="@color/text_blue"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/txt_no_of_suppliers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/txt_no_of_items"
+        android:textSize="12dp"
+        android:textColor="@color/text_blue"
+        android:layout_marginLeft="2dp"
+        tools:text="(2 suppliers)"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:id="@+id/img_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@android:drawable/arrow_up_float"/>
+
+    <TextView
+        android:id="@+id/txt_order_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/img_arrow"
+        android:textColor="@color/grey_medium"
+        tools:text="$1234.00"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"/>-->
+    <TextView
+        android:id="@+id/txt_review_total_items_in_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:text="@string/txt_review_order_cart_items"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</RelativeLayout>

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_view_orders"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="zeemart.asia.buyers.orders.vieworders.ViewOrdersActivity"
+    tools:showIn="@layout/activity_orders">
+
+
+    <RelativeLayout
+        android:id="@+id/lyt_bottom_view_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_swipe_refresh_view_orders">
+
+        <TextView
+            android:id="@+id/lyt_no_orders_60_days_ago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="34dp"
+            android:paddingTop="20dp"
+            android:paddingRight="34dp"
+            android:paddingBottom="20dp"
+            android:text="@string/orders_created_more_than_60_days_ago"
+            android:textColor="@color/grey_medium"
+            android:textSize="13sp">
+
+        </TextView>
+        <!--<ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            style="?android:attr/progressBarStyleSmall"/>-->
+    </RelativeLayout>
+
+    <!-- <ProgressBar
+        android:id="@+id/progressBarOrderDetails"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+    <RelativeLayout
+        android:id="@+id/orders_lyt_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/orders_btn_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="?android:actionBarSize"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="5dp"
+            android:background="@color/transparent"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:scaleType="centerInside"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@drawable/filtericon" />
+
+        <TextView
+            android:id="@+id/txt_number_of_selected_order_filters"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/text_in_rounded_circle_red"
+            android:elevation="2dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/orders_txt_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="?android:actionBarSize"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/txt_orders"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <include
+            layout="@layout/activity_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orders_txt_heading"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/lyt_swipe_refresh_view_orders"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/lyt_bottom_view_orders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_kit_loader_view_orders_blue">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lyt_constraint_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/faint_grey">
+
+            <LinearLayout
+                android:id="@+id/lyt_filter_applied_order_total"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txt_no_of_orders_filter_applied"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_weight="3"
+                    android:textColor="@color/grey_medium"
+                    android:textSize="14sp"
+                    tools:text="Showing 2 orders(1 placed)" />
+
+                <TextView
+                    android:id="@+id/txt_total_amount_filter_applied"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="$150" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_weekly_spend_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager_week_spending"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/lyt_spending_charts_order_listing"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/white_round_corner">
+
+                        <TextView
+                            android:id="@+id/txt_heading_past_14_days"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingTop="10dp"
+                            android:text="@string/content_orders_txt_heading_past_14_days_text"
+                            android:textColor="@color/grey_medium"
+                            android:textSize="10sp" />
+
+                        <com.github.mikephil.charting.charts.BarChart
+                            android:id="@+id/barChartOrderListing"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/txt_heading_past_14_days"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp" />
+
+                    </RelativeLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/lyt_spending_month_order_listing"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/white_round_corner">
+
+                        <TextView
+                            android:id="@+id/txt_order_listing_heading_this_month"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal|bottom"
+                            android:text="@string/txt_this_month"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toTopOf="@id/order_listing_this_month_spending"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="@id/guideline_vert_month"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/order_listing_this_month_spending"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="26sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_order_listing_date_this_month"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/guideline_vert_month"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_order_listing_heading_this_month"
+                            tools:text="$2345.10" />
+
+                        <TextView
+                            android:id="@+id/txt_order_listing_date_this_month"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/grey_medium"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="@id/guideline_vert_month"
+                            app:layout_constraintTop_toBottomOf="@id/order_listing_this_month_spending"
+                            tools:text="26Nov-2Dec" />
+
+                        <TextView
+                            android:id="@+id/txt_order_listing_heading_last_month"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal|bottom"
+                            android:text="@string/txt_last_month"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toTopOf="@id/order_listing_last_month_spending"
+                            app:layout_constraintLeft_toLeftOf="@id/guideline_vert_month"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/order_listing_last_month_spending"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="26sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_order_listing_date_last_month"
+                            app:layout_constraintLeft_toRightOf="@id/guideline_vert_month"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_order_listing_heading_last_month"
+                            tools:text="$2345.10" />
+
+                        <TextView
+                            android:id="@+id/txt_order_listing_date_last_month"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/grey_medium"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="@id/guideline_vert_month"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/order_listing_last_month_spending"
+                            tools:text="26Nov-2Dec" />
+
+                        <TextView
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/faint_grey"
+                            app:layout_constraintLeft_toLeftOf="@id/guideline_vert_month"
+                            app:layout_constraintRight_toRightOf="@id/guideline_vert_month" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline_vert_month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.50" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/lyt_spending_week_order_listing"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/white_round_corner">
+
+                        <TextView
+                            android:id="@+id/txt_order_listing_heading_this_week"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal|bottom"
+                            android:text="@string/txt_this_week"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toTopOf="@id/order_listing_this_week_spending"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="@id/guideline_vert"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/order_listing_this_week_spending"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="26sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_order_listing_date_this_week"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/guideline_vert"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_order_listing_heading_this_week"
+                            tools:text="$2345.10" />
+
+                        <TextView
+                            android:id="@+id/txt_order_listing_date_this_week"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/grey_medium"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="@id/guideline_vert"
+                            app:layout_constraintTop_toBottomOf="@id/order_listing_this_week_spending"
+                            tools:text="26Nov-2Dec" />
+
+                        <TextView
+                            android:id="@+id/txt_order_listing_heading_last_week"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal|bottom"
+                            android:text="@string/txt_last_week"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toTopOf="@id/order_listing_last_week_spending"
+                            app:layout_constraintLeft_toLeftOf="@id/guideline_vert"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/order_listing_last_week_spending"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="26sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_order_listing_date_last_week"
+                            app:layout_constraintLeft_toRightOf="@id/guideline_vert"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_order_listing_heading_last_week"
+                            tools:text="$2345.10" />
+
+                        <TextView
+                            android:id="@+id/txt_order_listing_date_last_week"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/grey_medium"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="@id/guideline_vert"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/order_listing_last_week_spending"
+                            tools:text="26Nov-2Dec" />
+
+                        <TextView
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/faint_grey"
+                            app:layout_constraintLeft_toLeftOf="@id/guideline_vert"
+                            app:layout_constraintRight_toRightOf="@id/guideline_vert" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline_vert"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.50" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.viewpager.widget.ViewPager>
+
+                <LinearLayout
+                    android:id="@+id/lyt_swipe_indicators"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/swipe_indicator_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/swipe_indicator_blue" />
+
+                    <ImageView
+                        android:id="@+id/swipe_indicator_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/swipe_indicator_grey" />
+                    <ImageView
+                    android:id="@+id/swipe_indicator_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/swipe_indicator_grey" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/order_lyt_no_orders"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/btn_no_orders_view_orders"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/transparent"
+                    android:clickable="false"
+                    android:drawableTop="@drawable/noorders"
+                    android:drawablePadding="10dp"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:text="@string/txt_no_orders"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/img_no_search_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/no_search_result" />
+
+                <TextView
+                    android:id="@+id/txt_no_search_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/content_orders_txt_no_search_1_text"
+                    android:textColor="@color/grey_medium"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_no_search_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:text="@string/txt_no_search_result"
+                    android:textColor="@color/grey_medium"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/order_lst_orders"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_weekly_spend_data" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <zeemart.asia.buyers.helper.customviews.CustomLoadingViewBlue
+        android:id="@+id/spin_kit_loader_view_orders_blue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/faint_grey"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orders_lyt_header" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

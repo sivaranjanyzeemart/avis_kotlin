@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_summary"
+        android:title="@string/txt_export_spending_summary" />
+    <item
+        android:id="@+id/item_raw_data"
+        android:title="@string/txt_export_spending_raw_data" />
+    <item
+        android:id="@+id/item_list_invoices"
+        android:title="@string/txt_export_list_of_invoices" />
+</menu>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translucent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rect_rounded_corners_white"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_on_hand_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Onhand: "
+            android:textColor="@color/dark_grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_on_hand_value"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txt_on_hand_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="10bg"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_on_hand_info"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txt_par_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=" • Par: "
+            android:textColor="@color/dark_grey"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_on_hand_value"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txt_par_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingRight="10dp"
+            android:text="15 kg"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_par_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_change_quantity_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Quantity"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/edtChangeQuantity"
+            android:layout_width="120dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/faint_grey"
+            android:digits="0123456789.,"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textSize="28sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_change_quantity_header" />
+
+        <LinearLayout
+            android:id="@+id/lyt_decrease_quantity"
+            android:layout_width="80dp"
+            android:layout_height="58dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/faint_grey"
+            android:gravity="center"
+            app:layout_constraintRight_toLeftOf="@id/edtChangeQuantity"
+            app:layout_constraintTop_toTopOf="@+id/edtChangeQuantity">
+
+            <ImageView
+                android:id="@+id/img_dec_quant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:src="@drawable/decrease" />
+
+            <TextView
+                android:id="@+id/txt_dec_quant_moq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/layout_change_product_quantity_txt_dec_quant_moq_text"
+                android:textColor="#757575"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_increase_quantity"
+            android:layout_width="80dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/faint_grey"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/increase"
+            app:layout_constraintStart_toEndOf="@+id/edtChangeQuantity"
+            app:layout_constraintTop_toTopOf="@+id/edtChangeQuantity" />
+
+        <TextView
+            android:id="@+id/txt_error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/pinky_red"
+            android:textSize="12sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@id/btn_increase_quantity"
+            app:layout_constraintStart_toStartOf="@id/lyt_decrease_quantity"
+            app:layout_constraintTop_toBottomOf="@id/edtChangeQuantity"
+            tools:text="item unavailable" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lst_unit_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/btn_increase_quantity"
+            app:layout_constraintStart_toStartOf="@id/lyt_decrease_quantity"
+            app:layout_constraintTop_toBottomOf="@id/txt_error_message" />
+
+
+        <Button
+            android:id="@+id/btnchange_quantity_done"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/blue_rounded_corner"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="@string/txt_done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_fill_to_par"
+            app:layout_constraintTop_toBottomOf="@id/lst_unit_size" />
+
+        <Button
+            android:id="@+id/btn_fill_to_par"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/light_blue_rounded_corner"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/txt_fill_to_par"
+            android:textAllCaps="false"
+            android:textColor="@color/color_azul_two"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnchange_quantity_done"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lst_unit_size" />
+
+
+        <TextView
+            android:id="@+id/txt_incoming_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="2 kg"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txt_incoming"
+             />
+        <TextView
+            android:id="@+id/txt_incoming"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text=" already ordered - expected to arrive on 23 Nov"
+            android:textColor="@color/dark_grey"
+            android:textSize="13sp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/txt_incoming_value"
+            app:layout_constraintTop_toBottomOf="@id/btnchange_quantity_done"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

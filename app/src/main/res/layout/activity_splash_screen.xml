@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_row"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_azul_two"
+    tools:context="zeemart.asia.buyers.selfOnBoarding.WelcomeScreenActivity">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/login_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:src="@drawable/zmlogowhite"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/splash_view_pager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/lyt_tab_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/black_round_corner"
+            android:elevation="5dp"
+            android:padding="5dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_centerInParent="true"
+                app:tabBackground="@drawable/carousel_tab_selected"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                app:tabPaddingStart="1dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/lyt_tab_banner"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_rounded_white"
+            android:text="@string/txt_login"
+            android:textAllCaps="false"
+            android:textColor="@color/chart_blue"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_navigation"
+            android:layout_centerInParent="true">
+
+            <Button
+                android:id="@+id/btn_log_in"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@color/transparent"
+                android:text="@string/txt_login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_divider"
+                android:layout_width="1dp"
+                android:layout_height="22dp"
+                android:background="@color/white" />
+
+            <Button
+                android:id="@+id/btn_sign_up"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:background="@color/transparent"
+                android:text="@string/txt_sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

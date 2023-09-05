@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:background="@color/white">
+    <LinearLayout
+        android:id="@+id/lyt_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentStart="true"
+        >
+        <TextView
+            android:id="@+id/txt_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="Popiah Wrapper - Lee Hup(pk of 200 pcs)" />
+        <TextView
+            android:id="@+id/txt_product_custom_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_medium"
+            android:textSize="12sp"
+            tools:text="Popiah Wrapper - Lee Hup(pk of 200 pcs)" />
+        <RelativeLayout
+            android:id="@+id/lyt_unit_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/txt_per_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                tools:text="$4.00/kg" />
+
+            <TextView
+                android:id="@+id/txt_price_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/txt_per_price"
+                android:layout_toEndOf="@+id/txt_per_price"
+                android:layout_toRightOf="@+id/txt_per_price"
+                android:includeFontPadding="false"
+                android:textColor="@color/grey_medium"
+                android:textSize="12sp"
+                tools:text=" • Product price" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!--<TextView-->
+    <!--android:id="@+id/txt_product_name"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_marginLeft="20dp"-->
+    <!--android:layout_marginStart="20dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_toLeftOf="@id/btn_delete"-->
+    <!--android:includeFontPadding="false"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--tools:text="abc product sfdsfafadsfasfasfewrwrfsadfasfdafgsgsgfdsdsfadsfafdsfadfdafas" />-->
+
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_alignTop="@+id/lyt_product_name"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/delete_product"
+        android:padding="10dp"
+        android:scaleType="center"
+        app:srcCompat="@drawable/greydelete" />
+    <RelativeLayout
+        android:id="@+id/lyt_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyt_product_name"
+        android:background="@color/faint_grey"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageButton
+            android:id="@+id/btn_view_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@color/transparent"
+            app:srcCompat="@drawable/notesblue" />
+
+
+        <TextView
+            android:id="@+id/txt_product_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/btn_view_notes"
+            android:layout_toRightOf="@id/btn_view_notes"
+            android:paddingLeft="5dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="test note" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_divider_grey"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lyt_notes"
+        android:background="@color/faint_grey" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_divider_grey"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/unit_size_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/grey_medium"
+            android:textSize="12sp"
+            tools:text="Kg" />
+
+        <TextView
+            android:id="@+id/txt_quantity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/unit_size_value"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/unit_size_value"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="Name" />
+
+        <!--<ImageButton
+            android:id="@+id/btn_view_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/notesblue" />
+
+        <TextView
+            android:id="@+id/txt_product_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/unit_size_value"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/btn_view_notes"
+            android:layout_toRightOf="@+id/btn_view_notes"
+            android:text="Notes"
+            android:textColor="@color/textblue"
+            android:layout_alignBaseline="@id/txt_quantity_value"
+            android:textSize="12sp"/>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>
